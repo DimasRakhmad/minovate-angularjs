@@ -1,0 +1,243 @@
+<div class="page page-material">
+
+
+
+
+  <!-- page header -->
+  <div class="pageheader">
+
+    <h2>{{page.title}} <span>// {{page.subtitle}}</span></h2>
+
+    <div class="page-bar">
+
+      <ul class="page-breadcrumb">
+        <li>
+          <a ui-sref="app.dashboard"><i class="fa fa-home"></i> {{main.title}}</a>
+        </li>
+        <li>
+          <a href="javascript:;">Material UI</a>
+        </li>
+        <li>
+          <a ui-sref="app.material.select">{{page.title}}</a>
+        </li>
+      </ul>
+
+    </div>
+
+  </div>
+  <!-- /page header -->
+
+
+
+
+
+
+  <!-- page content -->
+  <div class="pagecontent">
+
+    <div flex layout="column">
+
+      <section class="demo-container md-whiteframe-z1">
+
+        <md-toolbar>
+          <div class="md-toolbar-tools">
+            <md-button class="md-icon-button" aria-label="Settings">
+              <md-icon md-font-icon="zmdi zmdi-menu"></md-icon>
+            </md-button>
+            <h2>
+              <span>Basic Usage</span>
+            </h2>
+            <span flex></span>
+            <md-menu md-position-mode="target-right target">
+              <md-button aria-label="More" class="md-icon-button" ng-click="$mdOpenMenu()">
+                <md-icon md-menu-origin md-font-icon="zmdi zmdi-more-vert"></md-icon>
+              </md-button>
+              <md-menu-content width="4">
+                <md-menu-item ng-repeat="item in [1, 2, 3]">
+                  <md-button>
+                    Option {{item}}
+                  </md-button>
+                </md-menu-item>
+              </md-menu-content>
+            </md-menu>
+          </div>
+        </md-toolbar>
+
+        <md-content class="md-padding">
+
+          <h1 class="md-title">Enter an address</h1>
+          <div layout="row">
+            <md-input-container>
+              <label>Street Name</label>
+              <input type="text"/>
+            </md-input-container>
+            <md-input-container>
+              <label>City</label>
+              <input type="text"/>
+            </md-input-container>
+            <md-input-container>
+              <label>State</label>
+              <md-select ng-model="userState">
+                <md-option ng-repeat="state in states" value="{{state.abbrev}}">{{state.abbrev}}</md-option>
+              </md-select>
+            </md-input-container>
+          </div>
+
+        </md-content>
+
+      </section>
+
+      <section class="demo-container md-whiteframe-z1">
+
+        <md-toolbar>
+          <div class="md-toolbar-tools">
+            <md-button class="md-icon-button" aria-label="Settings">
+              <md-icon md-font-icon="zmdi zmdi-menu"></md-icon>
+            </md-button>
+            <h2>
+              <span>Option Groups</span>
+            </h2>
+            <span flex></span>
+            <md-menu md-position-mode="target-right target">
+              <md-button aria-label="More" class="md-icon-button" ng-click="$mdOpenMenu()">
+                <md-icon md-menu-origin md-font-icon="zmdi zmdi-more-vert"></md-icon>
+              </md-button>
+              <md-menu-content width="4">
+                <md-menu-item ng-repeat="item in [1, 2, 3]">
+                  <md-button>
+                    Option {{item}}
+                  </md-button>
+                </md-menu-item>
+              </md-menu-content>
+            </md-menu>
+          </div>
+        </md-toolbar>
+
+        <md-content class="md-padding">
+
+          <h1 class="md-title">Pick your pizza below</h1>
+          <div layout="row">
+            <md-input-container>
+              <label>Size</label>
+              <md-select ng-model="size">
+                <md-option ng-repeat="size in sizes" value="{{size}}">{{size}}</md-option>
+              </md-select>
+            </md-input-container>
+            <md-input-container>
+              <label>Topping</label>
+              <md-select ng-model="topping">
+                <md-optgroup label="Meats">
+                  <md-option ng-value="topping.name" ng-repeat="topping in toppings | filter: {category: 'meat' }">{{topping.name}}</md-option>
+                </md-optgroup>
+                <md-optgroup label="Veggies">
+                  <md-option ng-value="topping.name" ng-repeat="topping in toppings | filter: {category: 'veg' }">{{topping.name}}</md-option>
+                </md-optgroup>
+              </md-select>
+            </md-input-container>
+          </div>
+          <p ng-if="topping">You ordered a {{size.toLowerCase()}} pizza with {{topping.toLowerCase()}}.</p>
+
+        </md-content>
+
+      </section>
+
+      <section class="demo-container md-whiteframe-z1">
+
+        <md-toolbar>
+          <div class="md-toolbar-tools">
+            <md-button class="md-icon-button" aria-label="Settings">
+              <md-icon md-font-icon="zmdi zmdi-menu"></md-icon>
+            </md-button>
+            <h2>
+              <span>Options With Async Search</span>
+            </h2>
+            <span flex></span>
+            <md-menu md-position-mode="target-right target">
+              <md-button aria-label="More" class="md-icon-button" ng-click="$mdOpenMenu()">
+                <md-icon md-menu-origin md-font-icon="zmdi zmdi-more-vert"></md-icon>
+              </md-button>
+              <md-menu-content width="4">
+                <md-menu-item ng-repeat="item in [1, 2, 3]">
+                  <md-button>
+                    Option {{item}}
+                  </md-button>
+                </md-menu-item>
+              </md-menu-content>
+            </md-menu>
+          </div>
+        </md-toolbar>
+
+        <md-content class="md-padding">
+
+          <p>Select can call an arbitrary function on show. If this function returns a promise, it will display a loading indicator while it is being resolved:</p>
+          <div layout="column" layout-align="center center" style="height: 100px;">
+            <md-select placeholder="Assign to user" ng-model="user" md-on-open="loadUsers()" style="min-width: 200px;">
+              <md-option ng-value="user" ng-repeat="user in users">{{user.name}}</md-option>
+            </md-select>
+            <p class="md-caption">You have assigned the task to: {{ user ? user.name : 'No one yet' }}</p>
+          </div>
+
+        </md-content>
+
+      </section>
+
+      <section class="demo-container md-whiteframe-z1">
+
+        <md-toolbar>
+          <div class="md-toolbar-tools">
+            <md-button class="md-icon-button" aria-label="Settings">
+              <md-icon md-font-icon="zmdi zmdi-menu"></md-icon>
+            </md-button>
+            <h2>
+              <span>Validations</span>
+            </h2>
+            <span flex></span>
+            <md-menu md-position-mode="target-right target">
+              <md-button aria-label="More" class="md-icon-button" ng-click="$mdOpenMenu()">
+                <md-icon md-menu-origin md-font-icon="zmdi zmdi-more-vert"></md-icon>
+              </md-button>
+              <md-menu-content width="4">
+                <md-menu-item ng-repeat="item in [1, 2, 3]">
+                  <md-button>
+                    Option {{item}}
+                  </md-button>
+                </md-menu-item>
+              </md-menu-content>
+            </md-menu>
+          </div>
+        </md-toolbar>
+
+        <md-content class="md-padding">
+
+           <form name="myForm">
+             <p>Note that invalid styling only applies if invalid and dirty</p>
+             <md-input-container>
+               <label>Favorite Number</label>
+               <md-select name="myModel" ng-model="myModel" required>
+                 <md-option value="1">One</md-option>
+                 <md-option value="2">Two</md-option>
+               </md-select>
+               <div class="errors" ng-messages="myForm.myModel.$error" ng-if="myForm.$dirty">
+                 <div ng-message="required">Required</div>
+               </div>
+             </md-input-container>
+             <div layout="row">
+               <md-button ng-click="clearValue()" ng-disabled="!myModel" style="margin-right: 20px;">Clear</md-button>
+               <md-button ng-click="save()" ng-disabled="myForm.$invalid" class="md-primary" layout layout-align="center end">Save</md-button>
+             </div>
+           </form>
+
+        </md-content>
+
+      </section>
+
+    </div>
+
+
+  </div>
+  <!-- /page content -->
+
+
+
+
+</div>

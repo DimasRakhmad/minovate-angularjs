@@ -1,0 +1,246 @@
+<div class="page page-material">
+
+
+
+
+  <!-- page header -->
+  <div class="pageheader">
+
+    <h2>{{page.title}} <span>// {{page.subtitle}}</span></h2>
+
+    <div class="page-bar">
+
+      <ul class="page-breadcrumb">
+        <li>
+          <a ui-sref="app.dashboard"><i class="fa fa-home"></i> {{main.title}}</a>
+        </li>
+        <li>
+          <a href="javascript:;">Material UI</a>
+        </li>
+        <li>
+          <a ui-sref="app.material.fab-speed-dial">{{page.title}}</a>
+        </li>
+      </ul>
+
+    </div>
+
+  </div>
+  <!-- /page header -->
+
+
+
+
+
+
+  <!-- page content -->
+  <div class="pagecontent">
+
+    <div flex layout="column">
+
+      <section class="demo-container md-whiteframe-z1">
+
+        <md-toolbar>
+          <div class="md-toolbar-tools">
+            <md-button class="md-icon-button" aria-label="Settings">
+              <md-icon md-font-icon="zmdi zmdi-menu"></md-icon>
+            </md-button>
+            <h2>
+              <span>Basic Usage</span>
+            </h2>
+            <span flex></span>
+            <md-menu md-position-mode="target-right target">
+              <md-button aria-label="More" class="md-icon-button" ng-click="$mdOpenMenu()">
+                <md-icon md-menu-origin md-font-icon="zmdi zmdi-more-vert"></md-icon>
+              </md-button>
+              <md-menu-content width="4">
+                <md-menu-item ng-repeat="item in [1, 2, 3]">
+                  <md-button>
+                    Option {{item}}
+                  </md-button>
+                </md-menu-item>
+              </md-menu-content>
+            </md-menu>
+          </div>
+        </md-toolbar>
+
+        <md-content class="md-padding fabSpeedDialdemoBasicUsage" layout="column" ng-controller="mtFabSpeedDialBasicCtrl as demo">
+
+          <p>
+            You may supply a direction of <code>left</code>, <code>up</code>, <code>down</code>, or
+            <code>right</code> through the <code>md-direction</code> attribute.
+          </p>
+          <div class="lock-size" layout="row" layout-align="center center">
+            <md-fab-speed-dial md-open="demo.isOpen" md-direction="{{demo.selectedDirection}}"
+                               ng-class="demo.selectedMode">
+              <md-fab-trigger>
+                <md-button aria-label="menu" class="md-fab md-warn">
+                  <md-icon md-font-icon="zmdi zmdi-menu"></md-icon>
+                </md-button>
+              </md-fab-trigger>
+              <md-fab-actions>
+                <md-button aria-label="twitter" class="md-fab md-raised md-mini">
+                  <md-icon md-font-icon="zmdi zmdi-twitter-box"></md-icon>
+                </md-button>
+                <md-button aria-label="facebook" class="md-fab md-raised md-mini">
+                  <md-icon md-font-icon="zmdi zmdi-facebook-box"></md-icon>
+                </md-button>
+                <md-button aria-label="Google Hangout" class="md-fab md-raised md-mini">
+                  <md-icon md-font-icon="zmdi zmdi-google-plus-box"></md-icon>
+                </md-button>
+              </md-fab-actions>
+            </md-fab-speed-dial>
+          </div>
+          <div layout="row" layout-align="space-around">
+            <div layout="column">
+              <b>Direction</b>
+              <md-radio-group ng-model="demo.selectedDirection">
+                <md-radio-button ng-repeat="direction in demo.availableDirections"
+                                 ng-value="direction" class="text-capitalize">
+                  {{direction}}
+                </md-radio-button>
+              </md-radio-group>
+            </div>
+            <div layout="column">
+              <b>Open/Closed</b>
+              <md-radio-group ng-model="demo.isOpen">
+                <md-radio-button ng-value="true">Open</md-radio-button>
+                <md-radio-button ng-value="false">Closed</md-radio-button>
+              </md-radio-group>
+            </div>
+            <div layout="column">
+              <b>Animation Modes</b>
+              <md-radio-group ng-model="demo.selectedMode">
+                <md-radio-button ng-repeat="mode in demo.availableModes" ng-value="mode">
+                  {{mode}}
+                </md-radio-button>
+              </md-radio-group>
+            </div>
+          </div>
+          <p class="text-sm">
+            Note that you can also hover over the directive's area or tab through each button to open and
+            activate the speed dial menu.
+          </p>
+
+        </md-content>
+
+      </section>
+
+      <section class="demo-container md-whiteframe-z1">
+
+        <md-toolbar>
+          <div class="md-toolbar-tools">
+            <md-button class="md-icon-button" aria-label="Settings">
+              <md-icon md-font-icon="zmdi zmdi-menu"></md-icon>
+            </md-button>
+            <h2>
+              <span>More Options</span>
+            </h2>
+            <span flex></span>
+            <md-menu md-position-mode="target-right target">
+              <md-button aria-label="More" class="md-icon-button" ng-click="$mdOpenMenu()">
+                <md-icon md-menu-origin md-font-icon="zmdi zmdi-more-vert"></md-icon>
+              </md-button>
+              <md-menu-content width="4">
+                <md-menu-item ng-repeat="item in [1, 2, 3]">
+                  <md-button>
+                    Option {{item}}
+                  </md-button>
+                </md-menu-item>
+              </md-menu-content>
+            </md-menu>
+          </div>
+        </md-toolbar>
+
+        <md-content class="md-padding fabSpeedDialdemoMoreOptions" layout="column" ng-controller="mtFabSpeedDialMoreCtrl as demo">
+
+          <p>
+            The speed dial supports many advanced usage scenarios. This demo shows many of them mixed
+            together.
+          </p>
+          <div class="lock-size" layout="row" layout-align="center center">
+            <md-fab-speed-dial ng-hide="demo.hidden" md-direction="down" class="md-fling">
+              <md-fab-trigger>
+                <md-button aria-label="menu" class="md-fab md-warn">
+                  <md-tooltip md-direction="top">Menu</md-tooltip>
+                  <md-icon md-font-icon="zmdi zmdi-menu"></md-icon>
+                </md-button>
+              </md-fab-trigger>
+              <md-fab-actions>
+                <div ng-repeat="item in demo.items">
+                  <md-button aria-label="{{item.name}}" class="md-fab md-raised md-mini"
+                             ng-click="demo.openDialog($event, item)">
+                    <md-tooltip md-direction="{{item.direction}}">{{item.name}}</md-tooltip>
+                    <md-icon md-font-icon="{{item.icon}}"></md-icon>
+                  </md-button>
+                </div>
+              </md-fab-actions>
+            </md-fab-speed-dial>
+          </div>
+
+          <md-content class="md-padding" layout="row">
+            <div flex="50">
+              <h3>ngRepeat</h3>
+              <p>
+                You can easily use <code>ng-repeat</code> with the speed dial, but it requires a slightly
+                different HTML structure in order to support the necessary DOM changes/styling.
+              </p>
+              <p>
+                Simply ensure that your <code>ng-repeat</code> is on a <code>div</code> (or any other tag)
+                that wraps your items.
+              </p>
+            </div>
+            <div flex="50">
+              <h3>$mdDialog</h3>
+              <p>
+                You can also use the buttons to open a dialog. When clicked, the buttons above will open a
+                dialog showing a message which item was clicked.
+              </p>
+            </div>
+          </md-content>
+          <md-content class="md-padding" layout="row">
+            <div flex="50">
+              <h3>ngHide</h3>
+              <p>
+                The speed dial also supports hiding using the standard <code>ng-hide</code> attribute.
+                <md-checkbox ng-model="demo.hidden">
+                  Hide the speed dial.
+                </md-checkbox>
+              </p>
+            </div>
+            <div flex="50">
+              <h3>Tooltips</h3>
+              <p>
+                Each action item supports a tooltip using the standard approach as can be seen above.
+              </p>
+            </div>
+
+            <script type="text/ng-template" id="dialog.html">
+              <md-dialog>
+                <md-dialog-content>Hello User! You clicked {{dialog.item.name}}.</md-dialog-content>
+                <div class="md-actions">
+                  <md-button aria-label="Close dialog" ng-click="dialog.close()" class="md-primary">
+                    Close Greeting
+                  </md-button>
+                  <md-button aria-label="Submit dialog" ng-click="dialog.submit()" class="md-primary">
+                    Submit
+                  </md-button>
+                </div>
+              </md-dialog>
+            </script>
+
+          </md-content>
+
+        </md-content>
+
+      </section>
+
+    </div>
+
+
+  </div>
+  <!-- /page content -->
+
+
+
+
+</div>

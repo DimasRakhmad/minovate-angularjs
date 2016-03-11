@@ -1,0 +1,100 @@
+<div class="page page-material">
+
+
+
+
+  <!-- page header -->
+  <div class="pageheader">
+
+    <h2>{{page.title}} <span>// {{page.subtitle}}</span></h2>
+
+    <div class="page-bar">
+
+      <ul class="page-breadcrumb">
+        <li>
+          <a ui-sref="app.dashboard"><i class="fa fa-home"></i> {{main.title}}</a>
+        </li>
+        <li>
+          <a href="javascript:;">Material UI</a>
+        </li>
+        <li>
+          <a ui-sref="app.material.switch">{{page.title}}</a>
+        </li>
+      </ul>
+
+    </div>
+
+  </div>
+  <!-- /page header -->
+
+
+
+
+
+
+  <!-- page content -->
+  <div class="pagecontent">
+
+    <div flex layout="column">
+
+      <section class="demo-container md-whiteframe-z1">
+
+        <md-toolbar>
+          <div class="md-toolbar-tools">
+            <md-button class="md-icon-button" aria-label="Settings">
+              <md-icon md-font-icon="zmdi zmdi-menu"></md-icon>
+            </md-button>
+            <h2>
+              <span>Basic Usage</span>
+            </h2>
+            <span flex></span>
+            <md-menu md-position-mode="target-right target">
+              <md-button aria-label="More" class="md-icon-button" ng-click="$mdOpenMenu()">
+                <md-icon md-menu-origin md-font-icon="zmdi zmdi-more-vert"></md-icon>
+              </md-button>
+              <md-menu-content width="4">
+                <md-menu-item ng-repeat="item in [1, 2, 3]">
+                  <md-button>
+                    Option {{item}}
+                  </md-button>
+                </md-menu-item>
+              </md-menu-content>
+            </md-menu>
+          </div>
+        </md-toolbar>
+
+        <md-content class="md-padding">
+
+          <md-switch ng-model="data.cb1" aria-label="Switch 1">
+            Switch 1: {{ data.cb1 }}
+          </md-switch>
+          <md-switch ng-model="data.cb2" aria-label="Switch 2" ng-true-value="'yup'" ng-false-value="'nope'" class="md-warn">
+            Switch 2 (md-warn): {{ data.cb2 }}
+          </md-switch>
+          <md-switch ng-disabled="true" aria-label="Disabled switch" ng-model="disabledModel">
+            Switch (Disabled)
+          </md-switch>
+          <md-switch ng-disabled="true" aria-label="Disabled active switch" ng-model="data.cb4">
+            Switch (Disabled, Active)
+          </md-switch>
+          <md-switch class="md-primary" md-no-ink aria-label="Switch No Ink" ng-model="data.cb5">
+            Switch (md-primary): No Ink
+          </md-switch>
+          <md-switch ng-model="data.cb6" aria-label="Switch 6" ng-change="onChange(data.cb6)">
+            Switch 6 message: {{ message }}
+          </md-switch>
+
+        </md-content>
+
+      </section>
+
+    </div>
+
+
+  </div>
+  <!-- /page content -->
+
+
+
+
+</div>

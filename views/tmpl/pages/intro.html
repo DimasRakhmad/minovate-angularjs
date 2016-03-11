@@ -1,0 +1,29 @@
+<div class="page page-intro" ng-intro-options="IntroOptions" ng-intro-autostart="true" ng-intro-method="CallMe">
+
+  <div class="pageheader">
+
+    <h2>{{page.title}} <span>// {{page.subtitle}}</span></h2>
+
+    <div class="page-bar">
+
+      <ul class="page-breadcrumb">
+        <li>
+          <a ui-sref="app.dashboard"><i class="fa fa-home"></i> {{main.title}}</a>
+        </li>
+        <li>
+          <a href="javascript:;">Extra Pages</a>
+        </li>
+        <li>
+          <a ui-sref="app.pages.intro">{{page.title}}</a>
+        </li>
+      </ul>
+
+    </div>
+
+  </div>
+
+  <p class="lead">This is the intro page example.</p>
+
+  <button class="btn btn-info btn-lg btn-rounded-40" ng-click="CallMe();">Start Tour</button>
+
+</div>

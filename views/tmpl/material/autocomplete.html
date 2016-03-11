@@ -1,0 +1,230 @@
+<div class="page page-material">
+
+
+
+
+  <!-- page header -->
+  <div class="pageheader">
+
+    <h2>{{page.title}} <span>// {{page.subtitle}}</span></h2>
+
+    <div class="page-bar">
+
+      <ul class="page-breadcrumb">
+        <li>
+          <a ui-sref="app.dashboard"><i class="fa fa-home"></i> {{main.title}}</a>
+        </li>
+        <li>
+          <a href="javascript:;">Material UI</a>
+        </li>
+        <li>
+          <a ui-sref="app.material.autocomplete">{{page.title}}</a>
+        </li>
+      </ul>
+
+    </div>
+
+  </div>
+  <!-- /page header -->
+
+
+
+
+
+
+  <!-- page content -->
+  <div class="pagecontent">
+
+    <div flex layout="column">
+
+      <section class="demo-container md-whiteframe-z1" ng-controller="mtBasicAutocompleteCtrl as ctrl">
+
+        <md-toolbar>
+          <div class="md-toolbar-tools">
+            <md-button class="md-icon-button" aria-label="Settings">
+              <md-icon md-font-icon="zmdi zmdi-menu"></md-icon>
+            </md-button>
+            <h2>
+              <span>Basic Usage</span>
+            </h2>
+            <span flex></span>
+            <md-menu md-position-mode="target-right target">
+              <md-button aria-label="More" class="md-icon-button" ng-click="$mdOpenMenu()">
+                <md-icon md-menu-origin md-font-icon="zmdi zmdi-more-vert"></md-icon>
+              </md-button>
+              <md-menu-content width="4">
+                <md-menu-item ng-repeat="item in [1, 2, 3]">
+                  <md-button>
+                    Option {{item}}
+                  </md-button>
+                </md-menu-item>
+              </md-menu-content>
+            </md-menu>
+          </div>
+        </md-toolbar>
+
+        <md-content class="md-padding">
+
+          <form ng-submit="$event.preventDefault()">
+            <p class="docs">Use  <code>md-autocomplete</code> to search for matches from local or remote data sources.</p>
+            <md-autocomplete
+              ng-disabled="ctrl.isDisabled"
+              md-no-cache="ctrl.noCache"
+              md-selected-item="ctrl.selectedItem"
+              md-search-text-change="ctrl.searchTextChange(ctrl.searchText)"
+              md-search-text="ctrl.searchText"
+              md-selected-item-change="ctrl.selectedItemChange(item)"
+              md-items="item in ctrl.querySearch(ctrl.searchText)"
+              md-item-text="item.display"
+              md-min-length="0"
+              placeholder="What is your favorite US state?">
+              <md-item-template>
+                <span md-highlight-text="ctrl.searchText" md-highlight-flags="^i">{{item.display}}</span>
+              </md-item-template>
+              <md-not-found>
+                No matches found for "{{ctrl.searchText}}".
+              </md-not-found>
+            </md-autocomplete>
+            <br/>
+            <md-checkbox ng-model="ctrl.simulateQuery">Simulate query for results?</md-checkbox>
+            <md-checkbox ng-model="ctrl.noCache">Disable caching of queries?</md-checkbox>
+            <md-checkbox ng-model="ctrl.isDisabled">Disable the input?</md-checkbox>
+            <p class="docs">By default, <code>md-autocomplete</code> will cache results when performing a query.  After the initial call is performed, it will use the cached results to eliminate unnecessary server requests or lookup logic. This can be disabled above.</p>
+          </form>
+
+        </md-content>
+
+      </section>
+
+      <section class="demo-container md-whiteframe-z1" ng-controller="mtCustomAutocompleteCtrl as ctrl" ng-cloak>
+
+        <md-toolbar>
+          <div class="md-toolbar-tools">
+            <md-button class="md-icon-button" aria-label="Settings">
+              <md-icon md-font-icon="zmdi zmdi-menu"></md-icon>
+            </md-button>
+            <h2>
+              <span>Custom Template</span>
+            </h2>
+            <span flex></span>
+            <md-menu md-position-mode="target-right target">
+              <md-button aria-label="More" class="md-icon-button" ng-click="$mdOpenMenu()">
+                <md-icon md-menu-origin md-font-icon="zmdi zmdi-more-vert"></md-icon>
+              </md-button>
+              <md-menu-content width="4">
+                <md-menu-item ng-repeat="item in [1, 2, 3]">
+                  <md-button>
+                    Option {{item}}
+                  </md-button>
+                </md-menu-item>
+              </md-menu-content>
+            </md-menu>
+          </div>
+        </md-toolbar>
+
+        <md-content class="md-padding">
+
+          <form ng-submit="$event.preventDefault()">
+            <p class="docs">Use <code>&lt;md-autocomplete&gt;</code> with custom templates to show styled autocomplete results.</p>
+            <md-autocomplete
+              ng-disabled="ctrl.isDisabled"
+              md-no-cache="ctrl.noCache"
+              md-selected-item="ctrl.selectedItem"
+              md-search-text-change="ctrl.searchTextChange(ctrl.searchText)"
+              md-search-text="ctrl.searchText"
+              md-selected-item-change="ctrl.selectedItemChange(item)"
+              md-items="item in ctrl.querySearch(ctrl.searchText)"
+              md-item-text="item.name"
+              md-min-length="0"
+              placeholder="Pick an Angular repository"
+              md-menu-class="autocomplete-custom-template">
+              <md-item-template>
+                    <span class="item-title">
+                      <md-icon md-font-icon="zmdi zmdi-inbox"></md-icon>
+                      <span> {{item.name}} </span>
+                    </span>
+                    <span class="item-metadata">
+                      <span class="item-metastat">
+                        <strong>{{item.watchers}}</strong> watchers
+                      </span>
+                      <span class="item-metastat">
+                        <strong>{{item.forks}}</strong> forks
+                      </span>
+                    </span>
+              </md-item-template>
+            </md-autocomplete>
+          </form>
+
+        </md-content>
+
+      </section>
+
+      <section class="demo-container md-whiteframe-z1" ng-controller="mtFloatingAutocompleteCtrl as ctrl">
+
+        <md-toolbar>
+          <div class="md-toolbar-tools">
+            <md-button class="md-icon-button" aria-label="Settings">
+              <md-icon md-font-icon="zmdi zmdi-menu"></md-icon>
+            </md-button>
+            <h2>
+              <span>Floating Label</span>
+            </h2>
+            <span flex></span>
+            <md-menu md-position-mode="target-right target">
+              <md-button aria-label="More" class="md-icon-button" ng-click="$mdOpenMenu()">
+                <md-icon md-menu-origin md-font-icon="zmdi zmdi-more-vert"></md-icon>
+              </md-button>
+              <md-menu-content width="4">
+                <md-menu-item ng-repeat="item in [1, 2, 3]">
+                  <md-button>
+                    Option {{item}}
+                  </md-button>
+                </md-menu-item>
+              </md-menu-content>
+            </md-menu>
+          </div>
+        </md-toolbar>
+
+        <md-content class="md-padding">
+
+          <form ng-submit="$event.preventDefault()" name="searchForm">
+            <p class="docs">The following example demonstrates floating labels being used as a normal form element.</p>
+            <div layout-gt-sm="row">
+              <md-input-container flex>
+                <label>Name</label>
+                <input type="text"/>
+              </md-input-container>
+              <md-autocomplete flex required
+                               md-input-name="autocompleteField"
+                               md-no-cache="ctrl.noCache"
+                               md-selected-item="ctrl.selectedItem"
+                               md-search-text="ctrl.searchText"
+                               md-items="item in ctrl.querySearch(ctrl.searchText)"
+                               md-item-text="item.display"
+                               md-floating-label="Favorite state">
+                <md-item-template>
+                  <span md-highlight-text="ctrl.searchText">{{item.display}}</span>
+                </md-item-template>
+                <div ng-messages="searchForm.autocompleteField.$error" ng-if="searchForm.autocompleteField.$touched">
+                  <div ng-message="required">You <b>must</b> have a favorite state.</div>
+                  <div ng-message="minlength">Your entry is not long enough.</div>
+                  <div ng-message="maxlength">Your entry is too long.</div>
+                </div>
+              </md-autocomplete>
+            </div>
+          </form>
+
+        </md-content>
+
+      </section>
+
+    </div>
+
+
+  </div>
+  <!-- /page content -->
+
+
+
+
+</div>

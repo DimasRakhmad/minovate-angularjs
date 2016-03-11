@@ -1,0 +1,145 @@
+<div class="page page-material">
+
+
+
+
+  <!-- page header -->
+  <div class="pageheader">
+
+    <h2>{{page.title}} <span>// {{page.subtitle}}</span></h2>
+
+    <div class="page-bar">
+
+      <ul class="page-breadcrumb">
+        <li>
+          <a ui-sref="app.dashboard"><i class="fa fa-home"></i> {{main.title}}</a>
+        </li>
+        <li>
+          <a href="javascript:;">Material UI</a>
+        </li>
+        <li>
+          <a ui-sref="app.material.dialog">{{page.title}}</a>
+        </li>
+      </ul>
+
+    </div>
+
+  </div>
+  <!-- /page header -->
+
+
+
+
+
+
+  <!-- page content -->
+  <div class="pagecontent">
+
+    <div flex layout="column">
+
+      <section class="demo-container md-whiteframe-z1">
+
+        <md-toolbar>
+          <div class="md-toolbar-tools">
+            <md-button class="md-icon-button" aria-label="Settings">
+              <md-icon md-font-icon="zmdi zmdi-menu"></md-icon>
+            </md-button>
+            <h2>
+              <span>Basic Usage</span>
+            </h2>
+            <span flex></span>
+            <md-menu md-position-mode="target-right target">
+              <md-button aria-label="More" class="md-icon-button" ng-click="$mdOpenMenu()">
+                <md-icon md-menu-origin md-font-icon="zmdi zmdi-more-vert"></md-icon>
+              </md-button>
+              <md-menu-content width="4">
+                <md-menu-item ng-repeat="item in [1, 2, 3]">
+                  <md-button>
+                    Option {{item}}
+                  </md-button>
+                </md-menu-item>
+              </md-menu-content>
+            </md-menu>
+          </div>
+        </md-toolbar>
+
+        <md-content class="md-padding" id="popupContainer">
+
+          <p class="inset">
+            Open a dialog over the app's content. Press escape or click outside to close the dialog and
+            send focus back to the triggering button.
+          </p>
+          <div class="dialog-demo-content" layout="row" layout-wrap >
+            <md-button class="md-primary md-raised" ng-click="showAlert($event)" flex flex-md="100">
+              Alert Dialog
+            </md-button>
+            <md-button class="md-primary md-raised" ng-click="showConfirm($event)" flex flex-md="100">
+              Confirm Dialog
+            </md-button>
+            <md-button class="md-primary md-raised" ng-click="showAdvanced($event)" flex flex-md="100">
+              Custom Dialog
+            </md-button>
+          </div>
+          <div ng-if="status">
+            <br/>
+            <b layout="row" layout-align="center center" class="md-padding">
+              {{status}}
+            </b>
+          </div>
+
+          <script type="text/ng-template" id="dialog1.tmpl.html">
+            <md-dialog aria-label="Mango (Fruit)">
+              <form>
+                <md-toolbar>
+                  <div class="md-toolbar-tools">
+                    <h2>Mango (Fruit)</h2>
+                    <span flex></span>
+                    <md-button class="md-icon-button" ng-click="answer('not applicable')">
+                      <md-icon md-font-icon="zmdi zmdi-close" aria-label="Close dialog"></md-icon>
+                    </md-button>
+                  </div>
+                </md-toolbar>
+                <md-dialog-content style="max-width:800px;max-height:810px; ">
+                  <div>
+                    <p>
+                      The mango is a juicy stone fruit belonging to the genus Mangifera, consisting of numerous tropical fruiting trees, cultivated mostly for edible fruit. The majority of these species are found in nature as wild mangoes. They all belong to the flowering plant family Anacardiaceae. The mango is native to South and Southeast Asia, from where it has been distributed worldwide to become one of the most cultivated fruits in the tropics.
+                    </p>
+                    <img style="margin: auto; max-width: 100%;" alt="Lush mango tree" src="https://material.angularjs.org/latest/img/mangues.jpg">
+                    <p>
+                      The highest concentration of Mangifera genus is in the western part of Malesia (Sumatra, Java and Borneo) and in Burma and India. While other Mangifera species (e.g. horse mango, M. foetida) are also grown on a more localized basis, Mangifera indica&mdash;the "common mango" or "Indian mango"&mdash;is the only mango tree commonly cultivated in many tropical and subtropical regions.
+                    </p>
+                    <p>
+                      It originated in Indian subcontinent (present day India and Pakistan) and Burma. It is the national fruit of India, Pakistan, and the Philippines, and the national tree of Bangladesh. In several cultures, its fruit and leaves are ritually used as floral decorations at weddings, public celebrations, and religious ceremonies.
+                    </p>
+                  </div>
+                </md-dialog-content>
+                <div class="md-actions" layout="row">
+                  <md-button href="http://en.wikipedia.org/wiki/Mango" target="_blank" hide show-md>
+                    More on Wikipedia
+                  </md-button>
+                  <span flex></span>
+                  <md-button ng-click="answer('not useful')">
+                    Not Useful
+                  </md-button>
+                  <md-button ng-click="answer('useful')" style="margin-right:20px;">
+                    Useful
+                  </md-button>
+                </div>
+              </form>
+            </md-dialog>
+          </script>
+
+        </md-content>
+
+      </section>
+
+    </div>
+
+
+  </div>
+  <!-- /page content -->
+
+
+
+
+</div>

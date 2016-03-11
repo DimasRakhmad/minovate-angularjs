@@ -1,0 +1,295 @@
+<div class="page page-material">
+
+
+
+
+  <!-- page header -->
+  <div class="pageheader">
+
+    <h2>{{page.title}} <span>// {{page.subtitle}}</span></h2>
+
+    <div class="page-bar">
+
+      <ul class="page-breadcrumb">
+        <li>
+          <a ui-sref="app.dashboard"><i class="fa fa-home"></i> {{main.title}}</a>
+        </li>
+        <li>
+          <a href="javascript:;">Material UI</a>
+        </li>
+        <li>
+          <a ui-sref="app.material.chips">{{page.title}}</a>
+        </li>
+      </ul>
+
+    </div>
+
+  </div>
+  <!-- /page header -->
+
+
+
+
+
+
+  <!-- page content -->
+  <div class="pagecontent">
+
+    <div flex layout="column">
+
+      <section class="demo-container md-whiteframe-z1">
+
+        <md-toolbar>
+          <div class="md-toolbar-tools">
+            <md-button class="md-icon-button" aria-label="Settings">
+              <md-icon md-font-icon="zmdi zmdi-menu"></md-icon>
+            </md-button>
+            <h2>
+              <span>Basic Usage</span>
+            </h2>
+            <span flex></span>
+            <md-menu md-position-mode="target-right target">
+              <md-button aria-label="More" class="md-icon-button" ng-click="$mdOpenMenu()">
+                <md-icon md-menu-origin md-font-icon="zmdi zmdi-more-vert"></md-icon>
+              </md-button>
+              <md-menu-content width="4">
+                <md-menu-item ng-repeat="item in [1, 2, 3]">
+                  <md-button>
+                    Option {{item}}
+                  </md-button>
+                </md-menu-item>
+              </md-menu-content>
+            </md-menu>
+          </div>
+        </md-toolbar>
+
+        <md-content class="md-padding chipsdemoBasicUsage " ng-controller="mtChipsBasicDemoCtrl as ctrl">
+
+          <h2 class="md-title">Use a custom chip template.</h2>
+          <md-chips ng-model="ctrl.roFruitNames" readonly="ctrl.readonly">
+            <md-chip-template>
+              <strong>{{$chip}}</strong>
+              <em>(fruit)</em>
+            </md-chip-template>
+          </md-chips>
+          <br/>
+          <h2 class="md-title">Use the default chip template.</h2>
+          <md-chips ng-model="ctrl.fruitNames" readonly="ctrl.readonly"></md-chips>
+          <br/>
+          <h2 class="md-title">Use Placeholders and override hint texts.</h2>
+          <md-chips
+            ng-model="ctrl.tags"
+            readonly="ctrl.readonly"
+            placeholder="Enter a tag"
+            delete-button-label="Remove Tag"
+            delete-hint="Press delete to remove tag"
+            secondary-placeholder="+Tag"></md-chips>
+          <br/>
+          <h2 class="md-title">Display an ordered set of objects as chips (with custom template).</h2>
+          <md-chips class="custom-chips" ng-model="ctrl.vegObjs" readonly="ctrl.readonly"
+                    md-on-append="ctrl.newVeg($chip)">
+            <md-chip-template>
+        <span>
+          <strong>{{$chip.name}}</strong>
+          <em>({{$chip.type}})</em>
+        </span>
+            </md-chip-template>
+            <button md-chip-remove class="md-primary vegetablechip">
+              <md-icon md-svg-icon="md-close"></md-icon>
+            </button>
+          </md-chips>
+          <br/>
+          <md-checkbox ng-model="ctrl.readonly">Readonly</md-checkbox>
+
+        </md-content>
+
+      </section>
+
+      <section class="demo-container md-whiteframe-z1">
+
+        <md-toolbar>
+          <div class="md-toolbar-tools">
+            <md-button class="md-icon-button" aria-label="Settings">
+              <md-icon md-font-icon="zmdi zmdi-menu"></md-icon>
+            </md-button>
+            <h2>
+              <span>Contact Chips</span>
+            </h2>
+            <span flex></span>
+            <md-menu md-position-mode="target-right target">
+              <md-button aria-label="More" class="md-icon-button" ng-click="$mdOpenMenu()">
+                <md-icon md-menu-origin md-font-icon="zmdi zmdi-more-vert"></md-icon>
+              </md-button>
+              <md-menu-content width="4">
+                <md-menu-item ng-repeat="item in [1, 2, 3]">
+                  <md-button>
+                    Option {{item}}
+                  </md-button>
+                </md-menu-item>
+              </md-menu-content>
+            </md-menu>
+          </div>
+        </md-toolbar>
+
+        <md-content class="md-padding autocomplete chipsdemoContactChips" ng-controller="mtChipsContactChipDemoCtrl as ctrl" layout="column">
+
+          <md-contact-chips
+            ng-model="ctrl.contacts"
+            md-contacts="ctrl.querySearch($query)"
+            md-contact-name="name"
+            md-contact-image="image"
+            md-contact-email="email"
+            md-require-match="true"
+            md-highlight-flags="i"
+            filter-selected="ctrl.filterSelected"
+            placeholder="To">
+          </md-contact-chips>
+          <md-list class="fixedRows">
+            <md-subheader class="md-no-sticky">Contacts</md-subheader>
+            <md-list-item class="md-2-line contact-item" ng-repeat="(index, contact) in ctrl.allContacts"
+                          ng-if="ctrl.contacts.indexOf(contact) < 0">
+              <img ng-src="{{contact.image}}" class="md-avatar" alt="{{contact.name}}" />
+              <div class="md-list-item-text compact">
+                <h3>{{contact.name}}</h3>
+                <p>{{contact.email}}</p>
+              </div>
+            </md-list-item>
+            <md-list-item class="md-2-line contact-item selected" ng-repeat="(index, contact) in ctrl.contacts">
+              <img ng-src="{{contact.image}}" class="md-avatar" alt="{{contact.name}}" />
+              <div class="md-list-item-text compact">
+                <h3>{{contact.name}}</h3>
+                <p>{{contact.email}}</p>
+              </div>
+            </md-list-item>
+          </md-list>
+
+        </md-content>
+
+      </section>
+
+      <section class="demo-container md-whiteframe-z1">
+
+        <md-toolbar>
+          <div class="md-toolbar-tools">
+            <md-button class="md-icon-button" aria-label="Settings">
+              <md-icon md-font-icon="zmdi zmdi-menu"></md-icon>
+            </md-button>
+            <h2>
+              <span>Custom Inputs</span>
+            </h2>
+            <span flex></span>
+            <md-menu md-position-mode="target-right target">
+              <md-button aria-label="More" class="md-icon-button" ng-click="$mdOpenMenu()">
+                <md-icon md-menu-origin md-font-icon="zmdi zmdi-more-vert"></md-icon>
+              </md-button>
+              <md-menu-content width="4">
+                <md-menu-item ng-repeat="item in [1, 2, 3]">
+                  <md-button>
+                    Option {{item}}
+                  </md-button>
+                </md-menu-item>
+              </md-menu-content>
+            </md-menu>
+          </div>
+        </md-toolbar>
+
+        <md-content class="md-padding autocomplete chipsdemoCustomInputs" ng-controller="mtChipsCustomInputDemoCtrl as ctrl" layout="column">
+
+          <h2 class="md-title">Use an <code>input</code> element with no model to build an ordered set of chips.</h2>
+          <md-chips ng-model="ctrl.numberChips">
+            <input type="number" placeholder="Enter a number">
+          </md-chips>
+          <br/>
+          <h2 class="md-title">Use an <code>input</code>  element to build an ordered set of chips.</h2>
+          <md-chips ng-model="ctrl.numberChips2">
+            <input type="number" ng-model="ctrl.numberBuffer" placeholder="Enter a number">
+          </md-chips>
+          <br/>
+          <h2 class="md-title">Use <code>md-autocomplete</code>  to build an ordered set of chips.</h2>
+          <md-chips ng-model="ctrl.selectedVegetables" md-autocomplete-snap md-require-match>
+            <md-autocomplete
+              md-selected-item="ctrl.selectedItem"
+              md-search-text="ctrl.searchText"
+              md-items="item in ctrl.querySearch(ctrl.searchText)"
+              md-item-text="item.name"
+              placeholder="Search for a vegetable">
+              <span md-highlight-text="ctrl.searchText">{{item.name}} :: {{item.type}}</span>
+            </md-autocomplete>
+            <md-chip-template>
+              <span>
+                <strong>{{$chip.name}}</strong>
+                <em>({{$chip.type}})</em>
+              </span>
+            </md-chip-template>
+          </md-chips>
+          <br />
+          <h2 class="md-title">Vegetable Options</h2>
+          <md-list>
+            <md-list-item class="md-2-line veggie-option" ng-repeat="veg in ctrl.vegetables" layout="row"
+                          layout-wrap>
+              <div class="md-item-text md-whiteframe-z1" flex>
+                <h3>{{veg.name}}</h3>
+                <p>{{veg.type}}</p>
+              </div>
+            </md-list-item>
+          </md-list>
+
+        </md-content>
+
+      </section>
+
+      <section class="demo-container md-whiteframe-z1">
+
+        <md-toolbar>
+          <div class="md-toolbar-tools">
+            <md-button class="md-icon-button" aria-label="Settings">
+              <md-icon md-font-icon="zmdi zmdi-menu"></md-icon>
+            </md-button>
+            <h2>
+              <span>Static Chips</span>
+            </h2>
+            <span flex></span>
+            <md-menu md-position-mode="target-right target">
+              <md-button aria-label="More" class="md-icon-button" ng-click="$mdOpenMenu()">
+                <md-icon md-menu-origin md-font-icon="zmdi zmdi-more-vert"></md-icon>
+              </md-button>
+              <md-menu-content width="4">
+                <md-menu-item ng-repeat="item in [1, 2, 3]">
+                  <md-button>
+                    Option {{item}}
+                  </md-button>
+                </md-menu-item>
+              </md-menu-content>
+            </md-menu>
+          </div>
+        </md-toolbar>
+
+        <md-content class="md-padding" ng-controller="mtChipsStaticDemoCtrl as ctrl" layout="column">
+
+          <h2 class="md-title">Display a set of items as chips.</h2>
+          <md-chips>
+            <md-chip>Hockey</md-chip>
+            <md-chip>Lacrosse</md-chip>
+            <md-chip>Baseball</md-chip>
+            <!-- Static chips are transcluded -->
+            <md-chip>{{ctrl.chipText}}</md-chip>
+          </md-chips>
+          <p class="text-sm">
+            Static chips cannot be selected, removed or edited, and are not part of any model.<br/>
+            If no <code>ng-model</code> is provided, there are no input elements in <code>md-chips</code>.
+          </p>
+
+        </md-content>
+
+      </section>
+
+    </div>
+
+
+  </div>
+  <!-- /page content -->
+
+
+
+
+</div>

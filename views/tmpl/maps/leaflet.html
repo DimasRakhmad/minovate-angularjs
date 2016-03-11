@@ -1,0 +1,317 @@
+<div class="page page-leaflet-map">
+
+
+
+
+  <!-- page header -->
+  <div class="pageheader">
+
+    <h2>{{page.title}} <span>// {{page.subtitle}}</span></h2>
+
+    <div class="page-bar">
+
+      <ul class="page-breadcrumb">
+        <li>
+          <a ui-sref="app.dashboard"><i class="fa fa-home"></i> {{main.title}}</a>
+        </li>
+        <li>
+          <a href="javascript:;">Maps</a>
+        </li>
+        <li>
+          <a ui-sref="app.maps.google">{{page.title}}</a>
+        </li>
+      </ul>
+
+    </div>
+
+  </div>
+  <!-- /page header -->
+
+
+
+
+
+
+  <!-- page content -->
+  <div class="pagecontent">
+
+
+    <!-- row -->
+    <div class="row">
+      <!-- col -->
+      <div class="col-md-12">
+
+        <!-- tile -->
+        <section class="tile" fullscreen="isFullscreen01">
+
+          <!-- tile header -->
+          <div class="tile-header dvd dvd-btm">
+            <h1 class="custom-font"><strong>Basic </strong>Example</h1>
+            <ul class="controls">
+              <li class="dropdown" uib-dropdown on-toggle="toggled(open)">
+
+                <a href uib-dropdown-toggle class="dropdown-toggle settings"><i class="fa fa-cog"></i></a>
+
+                <ul class="dropdown-menu pull-right with-arrow animated littleFadeInUp">
+                  <li>
+                    <a href tile-control-toggle>
+                      <span class="minimize"><fa name="angle-down"></fa>&nbsp;&nbsp;&nbsp;Minimize</span>
+                      <span class="expand"><fa name="angle-up"></fa>&nbsp;&nbsp;&nbsp;Expand</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href tile-control-refresh ng-click="ajaxFaker()">
+                      <fa name="refresh"></fa> Refresh
+                    </a>
+                  </li>
+                  <li>
+                    <a href tile-control-fullscreen ng-click="isFullscreen01 = !isFullscreen01">
+                      <fa name="expand"></fa> Fullscreen
+                    </a>
+                  </li>
+
+                </ul>
+
+              </li>
+              <li class="remove"><a href tile-control-close><i class="fa fa-times"></i></a></li>
+            </ul>
+          </div>
+          <!-- /tile header -->
+
+          <!-- tile body -->
+          <div class="tile-body" ng-controller="leafletMap1">
+
+            <leaflet id="map1" width="100%" height="380px"></leaflet>
+
+          </div>
+          <!-- /tile body -->
+
+        </section>
+        <!-- /tile -->
+
+        <!-- tile -->
+        <section class="tile" fullscreen="isFullscreen02">
+
+          <!-- tile header -->
+          <div class="tile-header dvd dvd-btm">
+            <h1 class="custom-font"><strong>Autodiscover </strong>Example</h1>
+            <ul class="controls">
+              <li class="dropdown" uib-dropdown on-toggle="toggled(open)">
+
+                <a href uib-dropdown-toggle class="dropdown-toggle settings"><i class="fa fa-cog"></i></a>
+
+                <ul class="dropdown-menu pull-right with-arrow animated littleFadeInUp">
+                  <li>
+                    <a href tile-control-toggle>
+                      <span class="minimize"><fa name="angle-down"></fa>&nbsp;&nbsp;&nbsp;Minimize</span>
+                      <span class="expand"><fa name="angle-up"></fa>&nbsp;&nbsp;&nbsp;Expand</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href tile-control-refresh ng-click="ajaxFaker()">
+                      <fa name="refresh"></fa> Refresh
+                    </a>
+                  </li>
+                  <li>
+                    <a href tile-control-fullscreen ng-click="isFullscreen02 = !isFullscreen02">
+                      <fa name="expand"></fa> Fullscreen
+                    </a>
+                  </li>
+
+                </ul>
+
+              </li>
+              <li class="remove"><a href tile-control-close><i class="fa fa-times"></i></a></li>
+            </ul>
+          </div>
+          <!-- /tile header -->
+
+          <!-- tile body -->
+          <div class="tile-body" ng-controller="leafletMap2">
+
+            <form class="form-inline mb-10" role="form">
+
+              <div class="form-group">
+                <label class="sr-only">Latitude</label>
+                <input type="number" step="any" class="form-control" ng-model="autodiscover.lat" />
+              </div>
+
+              <div class="form-group">
+                <label class="sr-only">Longitude</label>
+                <input type="number" step="any" class="form-control" ng-model="autodiscover.lng" />
+              </div>
+
+              <div class="form-group">
+                <label class="sr-only">Zoom</label>
+                <input type="number" step="any" class="form-control" ng-model="autodiscover.zoom" />
+              </div>
+
+              <button class="btn btn-default" ng-click="autodiscover.autoDiscover=true">Discover position</button>
+            </form>
+
+            <leaflet id="map2" lf-center="autodiscover" width="100%" height="380px"></leaflet>
+
+          </div>
+          <!-- /tile body -->
+
+        </section>
+        <!-- /tile -->
+
+        <!-- tile -->
+        <section class="tile" fullscreen="isFullscreen03">
+
+          <!-- tile header -->
+          <div class="tile-header dvd dvd-btm">
+            <h1 class="custom-font"><strong>Draw Control </strong>Example</h1>
+            <ul class="controls">
+              <li class="dropdown" uib-dropdown on-toggle="toggled(open)">
+
+                <a href uib-dropdown-toggle class="dropdown-toggle settings"><i class="fa fa-cog"></i></a>
+
+                <ul class="dropdown-menu pull-right with-arrow animated littleFadeInUp">
+                  <li>
+                    <a href tile-control-toggle>
+                      <span class="minimize"><fa name="angle-down"></fa>&nbsp;&nbsp;&nbsp;Minimize</span>
+                      <span class="expand"><fa name="angle-up"></fa>&nbsp;&nbsp;&nbsp;Expand</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href tile-control-refresh ng-click="ajaxFaker()">
+                      <fa name="refresh"></fa> Refresh
+                    </a>
+                  </li>
+                  <li>
+                    <a href tile-control-fullscreen ng-click="isFullscreen03 = !isFullscreen03">
+                      <fa name="expand"></fa> Fullscreen
+                    </a>
+                  </li>
+
+                </ul>
+
+              </li>
+              <li class="remove"><a href tile-control-close><i class="fa fa-times"></i></a></li>
+            </ul>
+          </div>
+          <!-- /tile header -->
+
+          <!-- tile body -->
+          <div class="tile-body" ng-controller="leafletMap3">
+
+            <leaflet id="map3" lf-center="london" controls="controls" layers="layers" width="100%" height="380"></leaflet>
+
+          </div>
+          <!-- /tile body -->
+
+        </section>
+        <!-- /tile -->
+
+        <!-- tile -->
+        <section class="tile" fullscreen="isFullscreen04">
+
+          <!-- tile header -->
+          <div class="tile-header dvd dvd-btm">
+            <h1 class="custom-font"><strong>Google Map </strong>Example</h1>
+            <ul class="controls">
+              <li class="dropdown" uib-dropdown on-toggle="toggled(open)">
+
+                <a href uib-dropdown-toggle class="dropdown-toggle settings"><i class="fa fa-cog"></i></a>
+
+                <ul class="dropdown-menu pull-right with-arrow animated littleFadeInUp">
+                  <li>
+                    <a href tile-control-toggle>
+                      <span class="minimize"><fa name="angle-down"></fa>&nbsp;&nbsp;&nbsp;Minimize</span>
+                      <span class="expand"><fa name="angle-up"></fa>&nbsp;&nbsp;&nbsp;Expand</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href tile-control-refresh ng-click="ajaxFaker()">
+                      <fa name="refresh"></fa> Refresh
+                    </a>
+                  </li>
+                  <li>
+                    <a href tile-control-fullscreen ng-click="isFullscreen04 = !isFullscreen04">
+                      <fa name="expand"></fa> Fullscreen
+                    </a>
+                  </li>
+
+                </ul>
+
+              </li>
+              <li class="remove"><a href tile-control-close><i class="fa fa-times"></i></a></li>
+            </ul>
+          </div>
+          <!-- /tile header -->
+
+          <!-- tile body -->
+          <div class="tile-body" ng-controller="leafletMap4">
+
+            <leaflet id="map4" lf-center="berlin" layers="layers" markers="markers" height="380px" width="100%"></leaflet>
+
+          </div>
+          <!-- /tile body -->
+
+        </section>
+        <!-- /tile -->
+
+        <!-- tile -->
+        <section class="tile" fullscreen="isFullscreen05">
+
+          <!-- tile header -->
+          <div class="tile-header dvd dvd-btm">
+            <h1 class="custom-font"><strong>Heat Map </strong>Example</h1>
+            <ul class="controls">
+              <li class="dropdown" uib-dropdown on-toggle="toggled(open)">
+
+                <a href uib-dropdown-toggle class="dropdown-toggle settings"><i class="fa fa-cog"></i></a>
+
+                <ul class="dropdown-menu pull-right with-arrow animated littleFadeInUp">
+                  <li>
+                    <a href tile-control-toggle>
+                      <span class="minimize"><fa name="angle-down"></fa>&nbsp;&nbsp;&nbsp;Minimize</span>
+                      <span class="expand"><fa name="angle-up"></fa>&nbsp;&nbsp;&nbsp;Expand</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href tile-control-refresh ng-click="ajaxFaker()">
+                      <fa name="refresh"></fa> Refresh
+                    </a>
+                  </li>
+                  <li>
+                    <a href tile-control-fullscreen ng-click="isFullscreen05 = !isFullscreen05">
+                      <fa name="expand"></fa> Fullscreen
+                    </a>
+                  </li>
+
+                </ul>
+
+              </li>
+              <li class="remove"><a href tile-control-close><i class="fa fa-times"></i></a></li>
+            </ul>
+          </div>
+          <!-- /tile header -->
+
+          <!-- tile body -->
+          <div class="tile-body" ng-controller="leafletMap5">
+
+            <leaflet id="map5" lf-center="center" layers="layers" width="100%" height="380px"></leaflet>
+
+          </div>
+          <!-- /tile body -->
+
+        </section>
+        <!-- /tile -->
+
+      </div>
+      <!-- /col -->
+    </div>
+    <!-- /row -->
+
+
+
+  </div>
+  <!-- /page content -->
+
+
+
+
+</div>

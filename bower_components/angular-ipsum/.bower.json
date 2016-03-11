@@ -1,0 +1,39 @@
+{
+  "name": "angular-ipsum",
+  "version": "0.0.4",
+  "homepage": "https://github.com/adamczak/ng-ipsum",
+  "authors": [
+    "Brian <adamczak@gmail.com>"
+  ],
+  "description": "Lorem ipsum text, people names and other randomness for AngularJS applications",
+  "main": "dist/ipsum.min.js",
+  "keywords": [
+    "ipsum",
+    "angular",
+    "random"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "src",
+    "demo",
+    "gruntfile.js",
+    "index.html",
+    "package.json",
+    "README.md",
+    "bower.json"
+  ],
+  "_release": "0.0.4",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.0.4",
+    "commit": "dc4ed01c277350d412b98d1318c69ca085b04939"
+  },
+  "_source": "git://github.com/adamczak/ng-ipsum.git",
+  "_target": "~0.0.4",
+  "_originalSource": "angular-ipsum"
+}

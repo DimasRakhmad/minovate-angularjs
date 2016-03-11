@@ -1,0 +1,168 @@
+<div class="page page-material">
+
+
+
+
+  <!-- page header -->
+  <div class="pageheader">
+
+    <h2>{{page.title}} <span>// {{page.subtitle}}</span></h2>
+
+    <div class="page-bar">
+
+      <ul class="page-breadcrumb">
+        <li>
+          <a ui-sref="app.dashboard"><i class="fa fa-home"></i> {{main.title}}</a>
+        </li>
+        <li>
+          <a href="javascript:;">Material UI</a>
+        </li>
+        <li>
+          <a ui-sref="app.material.toolbar">{{page.title}}</a>
+        </li>
+      </ul>
+
+    </div>
+
+  </div>
+  <!-- /page header -->
+
+
+
+
+
+
+  <!-- page content -->
+  <div class="pagecontent">
+
+    <div flex layout="column">
+
+      <section class="demo-container md-whiteframe-z1">
+
+        <md-toolbar>
+          <div class="md-toolbar-tools">
+            <md-button class="md-icon-button" aria-label="Settings">
+              <md-icon md-font-icon="zmdi zmdi-menu"></md-icon>
+            </md-button>
+            <h2>
+              <span>Basic Usage</span>
+            </h2>
+            <span flex></span>
+            <md-menu md-position-mode="target-right target">
+              <md-button aria-label="More" class="md-icon-button" ng-click="$mdOpenMenu()">
+                <md-icon md-menu-origin md-font-icon="zmdi zmdi-more-vert"></md-icon>
+              </md-button>
+              <md-menu-content width="4">
+                <md-menu-item ng-repeat="item in [1, 2, 3]">
+                  <md-button>
+                    Option {{item}}
+                  </md-button>
+                </md-menu-item>
+              </md-menu-content>
+            </md-menu>
+          </div>
+        </md-toolbar>
+
+        <md-content class="md-padding toolbardemoBasicUsage">
+
+          <md-toolbar>
+            <div class="md-toolbar-tools">
+              <md-button class="md-icon-button" aria-label="Settings">
+                <md-icon md-font-icon="zmdi zmdi-menu"></md-icon>
+              </md-button>
+              <h2>
+                <span>Toolbar with Icon Buttons</span>
+              </h2>
+              <span flex></span>
+              <md-button class="md-icon-button" aria-label="Favorite">
+                <md-icon md-font-icon="zmdi zmdi-favorite" style="color: greenyellow;"></md-icon>
+              </md-button>
+              <md-button class="md-icon-button" aria-label="More">
+                <md-icon md-font-icon="zmdi zmdi-more-vert"></md-icon>
+              </md-button>
+            </div>
+          </md-toolbar>
+          <br>
+          <md-toolbar class="md-tall md-accent">
+            <h2 class="md-toolbar-tools">
+              <span>Toolbar: tall (md-accent)</span>
+            </h2>
+          </md-toolbar>
+          <br>
+          <md-toolbar class="md-tall md-warn md-hue-3">
+            <span flex></span>
+            <h2 class="md-toolbar-tools md-toolbar-tools-bottom">
+              <span class="md-flex">Toolbar: tall with actions pin to the bottom (md-warn md-hue-3)</span>
+            </h2>
+          </md-toolbar>
+
+        </md-content>
+
+      </section>
+
+
+      <section class="demo-container md-whiteframe-z1">
+
+        <md-toolbar>
+          <div class="md-toolbar-tools">
+            <md-button class="md-icon-button" aria-label="Settings">
+              <md-icon md-font-icon="zmdi zmdi-menu"></md-icon>
+            </md-button>
+            <h2>
+              <span>Scroll Shrink</span>
+            </h2>
+            <span flex></span>
+            <md-menu md-position-mode="target-right target">
+              <md-button aria-label="More" class="md-icon-button" ng-click="$mdOpenMenu()">
+                <md-icon md-menu-origin md-font-icon="zmdi zmdi-more-vert"></md-icon>
+              </md-button>
+              <md-menu-content width="4">
+                <md-menu-item ng-repeat="item in [1, 2, 3]">
+                  <md-button>
+                    Option {{item}}
+                  </md-button>
+                </md-menu-item>
+              </md-menu-content>
+            </md-menu>
+          </div>
+        </md-toolbar>
+
+        <div layout="column" class="toolbardemoScrollShrink" style="height:600px">
+
+          <md-toolbar md-scroll-shrink>
+            <div class="md-toolbar-tools">
+              <h3>
+                <span>My App Title</span>
+              </h3>
+            </div>
+          </md-toolbar>
+          <md-content flex>
+            <md-list>
+              <md-list-item class="md-3-line" ng-repeat="item in todos">
+                <img ng-src="{{item.face}}" alt="{{item.who}}" class="md-avatar">
+                <div class="md-list-item-text">
+                  <h3>{{item.what}}</h3>
+                  <h4>{{item.who}}</h4>
+                  <p>
+                    {{item.notes}}
+                  </p>
+                </div>
+                <md-divider inset></md-divider>
+              </md-list-item>
+            </md-list>
+          </md-content>
+
+        </div>
+
+      </section>
+
+    </div>
+
+
+  </div>
+  <!-- /page content -->
+
+
+
+
+</div>

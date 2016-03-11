@@ -1,0 +1,280 @@
+<div class="page page-material">
+
+
+
+
+  <!-- page header -->
+  <div class="pageheader">
+
+    <h2>{{page.title}} <span>// {{page.subtitle}}</span></h2>
+
+    <div class="page-bar">
+
+      <ul class="page-breadcrumb">
+        <li>
+          <a ui-sref="app.dashboard"><i class="fa fa-home"></i> {{main.title}}</a>
+        </li>
+        <li>
+          <a href="javascript:;">Material UI</a>
+        </li>
+        <li>
+          <a ui-sref="app.material.menu">{{page.title}}</a>
+        </li>
+      </ul>
+
+    </div>
+
+  </div>
+  <!-- /page header -->
+
+
+
+
+
+
+  <!-- page content -->
+  <div class="pagecontent">
+
+    <div flex layout="column">
+
+      <section class="demo-container md-whiteframe-z1">
+
+        <md-toolbar>
+          <div class="md-toolbar-tools">
+            <md-button class="md-icon-button" aria-label="Settings">
+              <md-icon md-font-icon="zmdi zmdi-menu"></md-icon>
+            </md-button>
+            <h2>
+              <span>Basic Usage</span>
+            </h2>
+            <span flex></span>
+            <md-menu md-position-mode="target-right target">
+              <md-button aria-label="More" class="md-icon-button" ng-click="$mdOpenMenu()">
+                <md-icon md-menu-origin md-font-icon="zmdi zmdi-more-vert"></md-icon>
+              </md-button>
+              <md-menu-content width="4">
+                <md-menu-item ng-repeat="item in [1, 2, 3]">
+                  <md-button>
+                    Option {{item}}
+                  </md-button>
+                </md-menu-item>
+              </md-menu-content>
+            </md-menu>
+          </div>
+        </md-toolbar>
+
+        <md-content class="md-padding menudemoBasicUsage" ng-controller="mtMenuBasicCtrl as ctrl">
+
+          <div class="menu-demo-container" layout-align="center center" layout="column">
+            <h2 class="md-title">Simple dropdown menu</h2>
+            <p>Applying the <code>md-menu-origin</code> and <code>md-menu-align-target</code> attributes ensure that the menu elements align.
+              Note: If you select the Redial menu option, then a modal dialog will zoom out of the phone icon button.</p>
+            <md-menu>
+              <md-button aria-label="Open phone interactions menu" class="md-icon-button" ng-click="ctrl.openMenu($mdOpenMenu, $event)">
+                <md-icon md-menu-origin md-font-icon="zmdi zmdi-phone"></md-icon>
+              </md-button>
+              <md-menu-content width="4">
+                <md-menu-item>
+                  <md-button ng-click="ctrl.redial($event)">
+                    <md-icon md-font-icon="zmdi zmdi-dialpad" md-menu-align-target></md-icon>
+                    Redial
+                  </md-button>
+                </md-menu-item>
+                <md-menu-item>
+                  <md-button disabled="disabled" ng-click="ctrl.checkVoicemail()">
+                    <md-icon md-font-icon="zmdi zmdi-voicemail"></md-icon>
+                    Check voicemail
+                  </md-button>
+                </md-menu-item>
+                <md-menu-divider></md-menu-divider>
+                <md-menu-item>
+                  <md-button ng-click="ctrl.toggleNotifications()">
+                    <md-icon md-font-icon class="zmdi zmdi-notifications-{{ctrl.notificationsEnabled ? 'off' : 'active'}}"></md-icon>
+                    {{ctrl.notificationsEnabled ? 'Disable' : 'Enable' }} notifications
+                  </md-button>
+                </md-menu-item>
+              </md-menu-content>
+            </md-menu>
+          </div>
+
+        </md-content>
+
+      </section>
+
+      <section class="demo-container md-whiteframe-z1">
+
+        <md-toolbar>
+          <div class="md-toolbar-tools">
+            <md-button class="md-icon-button" aria-label="Settings">
+              <md-icon md-font-icon="zmdi zmdi-menu"></md-icon>
+            </md-button>
+            <h2>
+              <span>Menu Positon Modes</span>
+            </h2>
+            <span flex></span>
+            <md-menu md-position-mode="target-right target">
+              <md-button aria-label="More" class="md-icon-button" ng-click="$mdOpenMenu()">
+                <md-icon md-menu-origin md-font-icon="zmdi zmdi-more-vert"></md-icon>
+              </md-button>
+              <md-menu-content width="4">
+                <md-menu-item ng-repeat="item in [1, 2, 3]">
+                  <md-button>
+                    Option {{item}}
+                  </md-button>
+                </md-menu-item>
+              </md-menu-content>
+            </md-menu>
+          </div>
+        </md-toolbar>
+
+        <md-content class="md-padding menudemoMenuPositionModes" ng-controller="mtMenuPositionsCtrl as ctrl">
+
+          <div class="menu-demo-container" layout-align="center center" layout="column">
+            <h2 class="md-title">Positon Mode Demos</h2>
+            <p>The <code>md-position-mode</code> attribute can be used to specify the positioning along the <code>x</code> and <code>y</code> axis.</p>
+            <hr/>
+            <h3 class="md-subhead">Target-Based Position Modes</h3>
+            <div class="menus"  layout-wrap layout="row" layout-align="space-between center">
+              <div layout="column" flex="33" flex-sm="100" layout-align="center center">
+                <p>Target Mode Positioning (default)</p>
+                <md-menu>
+                  <md-button aria-label="Open demo menu" class="md-icon-button" ng-click="$mdOpenMenu($event)">
+                    <md-icon md-menu-origin md-font-icon="zmdi zmdi-assignment-account"></md-icon>
+                  </md-button>
+                  <md-menu-content width="6">
+                    <md-menu-item ng-repeat="item in [1, 2, 3]">
+                      <md-button ng-click="ctrl.announceClick($index)">
+                        <md-icon md-menu-align-target md-font-icon="zmdi zmdi-cast"></md-icon>
+                        Option {{item}}
+                      </md-button>
+                    </md-menu-item>
+                  </md-menu-content>
+                </md-menu>
+              </div>
+              <div layout="column" flex-sm="100" flex="33" layout-align="center center">
+                <p>Target mode with <code>md-offset</code></p>
+                <md-menu md-offset="0 -5">
+                  <md-button aria-label="Open demo menu" class="md-icon-button" ng-click="ctrl.openMenu($mdOpenMenu, $event)">
+                    <md-icon md-menu-origin md-font-icon="zmdi zmdi-phone-ring"></md-icon>
+                  </md-button>
+                  <md-menu-content width="4">
+                    <md-menu-item ng-repeat="item in [1, 2, 3]">
+                      <md-button ng-click="ctrl.announceClick($index)"> <span md-menu-align-target>Option</span> {{item}} </md-button>
+                    </md-menu-item>
+                  </md-menu-content>
+                </md-menu>
+              </div>
+              <div layout="column" flex-sm="100" flex="33" layout-align="center center">
+                <p><code>md-position-mode="target-right target"</code></p>
+                <md-menu md-position-mode="target-right target" >
+                  <md-button aria-label="Open demo menu" class="md-icon-button" ng-click="$mdOpenMenu($event)">
+                    <md-icon md-menu-origin md-font-icon="zmdi zmdi-portable-wifi-off"></md-icon>
+                  </md-button>
+                  <md-menu-content width="4" >
+                    <md-menu-item ng-repeat="item in [1, 2, 3]">
+                      <md-button ng-click="ctrl.announceClick($index)">
+                        <div layout="row">
+                          <p flex>Option {{item}}</p>
+                          <md-icon md-menu-align-target md-font-icon="zmdi zmdi-portable-wifi-off" style="margin: auto 3px auto 0;"></md-icon>
+                        </div>
+                      </md-button>
+                    </md-menu-item>
+                  </md-menu-content>
+                </md-menu>
+              </div>
+            </div>
+          </div>
+
+        </md-content>
+
+      </section>
+
+      <section class="demo-container md-whiteframe-z1">
+
+        <md-toolbar>
+          <div class="md-toolbar-tools">
+            <md-button class="md-icon-button" aria-label="Settings">
+              <md-icon md-font-icon="zmdi zmdi-menu"></md-icon>
+            </md-button>
+            <h2>
+              <span>Menu Width</span>
+            </h2>
+            <span flex></span>
+            <md-menu md-position-mode="target-right target">
+              <md-button aria-label="More" class="md-icon-button" ng-click="$mdOpenMenu()">
+                <md-icon md-menu-origin md-font-icon="zmdi zmdi-more-vert"></md-icon>
+              </md-button>
+              <md-menu-content width="4">
+                <md-menu-item ng-repeat="item in [1, 2, 3]">
+                  <md-button>
+                    Option {{item}}
+                  </md-button>
+                </md-menu-item>
+              </md-menu-content>
+            </md-menu>
+          </div>
+        </md-toolbar>
+
+        <md-content class="md-padding menudemoMenuWidth" ng-controller="mtMenuWidthCtrl as ctrl">
+
+          <div class="menu-demo-container" layout-align="center center" layout="column">
+            <h2 class="md-title">Different Widths</h2>
+            <p><code>md-menu-content</code> may specify a <code>width</code> attribute which will follow the <a href="http://www.google.com/design/spec/components/menus.html#menus-specs">official spec</a>.</p>
+            <div class="menus" layout-wrap layout="row" layout-align="space-between center">
+              <div layout="column" flex="33" flex-sm="100" layout-align="center center">
+                <p>Wide menu (<code>width=6</code>)</p>
+                <md-menu md-offset="0 -7">
+                  <md-button aria-label="Open demo menu" class="md-icon-button" ng-click="$mdOpenMenu($event)">
+                    <md-icon md-menu-origin md-font-icon="zmdi zmdi-phone"></md-icon>
+                  </md-button>
+                  <md-menu-content width="6">
+                    <md-menu-item ng-repeat="item in [1, 2, 3]">
+                      <md-button ng-click="ctrl.announceClick($index)"> <span md-menu-align-target>Option</span> {{item}} </md-button>
+                    </md-menu-item>
+                  </md-menu-content>
+                </md-menu>
+              </div>
+              <div layout="column" flex-sm="100" flex="33" layout-align="center center">
+                <p>Medium menu (<code>width=4</code>)</p>
+                <md-menu md-offset="0 -7">
+                  <md-button aria-label="Open demo menu" class="md-icon-button" ng-click="$mdOpenMenu($event)">
+                    <md-icon md-menu-origin md-font-icon="zmdi zmdi-email"></md-icon>
+                  </md-button>
+                  <md-menu-content width="4">
+                    <md-menu-item ng-repeat="item in [1, 2, 3]">
+                      <md-button ng-click="ctrl.announceClick($index)"> <span md-menu-align-target>Option</span> {{item}} </md-button>
+                    </md-menu-item>
+                  </md-menu-content>
+                </md-menu>
+              </div>
+              <div layout="column" flex="33" flex-sm="100" layout-align="center center">
+                <p>Small menu (<code>width=2</code>)</p>
+                <md-menu md-offset="0 -7">
+                  <md-button aria-label="Open demo menu" class="md-icon-button" ng-click="$mdOpenMenu($event)">
+                    <md-icon md-menu-origin md-font-icon="zmdi zmdi-comment-text"></md-icon>
+                  </md-button>
+                  <md-menu-content width="2">
+                    <md-menu-item ng-repeat="item in [1, 2, 3]">
+                      <md-button ng-click="ctrl.announceClick($index)"> <span md-menu-align-target>Option</span> {{item}} </md-button>
+                    </md-menu-item>
+                  </md-menu-content>
+                </md-menu>
+              </div>
+            </div>
+          </div>
+    </div>
+
+        </md-content>
+
+      </section>
+
+    </div>
+
+
+  </div>
+  <!-- /page content -->
+
+
+
+
+</div>

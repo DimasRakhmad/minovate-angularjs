@@ -1,0 +1,15 @@
+.page {
+  padding: 20px;
+  background-color: $content-bg;
+}
+.page-full {
+  height: 100%;
+  padding: 0;
+}
+.page-core {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 60px 10px;
+  background-color: $slategray;
+}

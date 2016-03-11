@@ -1,0 +1,263 @@
+<div id="sidebar-wrap" ng-controller="NavCtrl">
+  <uib-accordion close-others="oneAtTime" slimscroll="{height: '100%'}">
+
+    <uib-accordion-group is-open="status.isFirstOpen" ng-class="{'open': status.isFirstOpen, 'closed': !status.isFirstOpen}">
+      <uib-accordion-heading>
+        Navigation <i class="pull-right fa" ng-class="{'fa-angle-up': status.isFirstOpen, 'fa-angle-down': !status.isFirstOpen}"></i>
+      </uib-accordion-heading>
+      <ul id="navigation" nav-collapse ripple>
+        <li ui-sref-active="active"><a ui-sref="app.dashboard"><fa name="dashboard"></fa> <span>{{ 'Menu.DASHBOARD' | translate }}</span></a></li>
+        <li ui-sref-active="active" ng-class="{'open':$state.includes('app.mail')}">
+          <a ui-sref="app.mail"><fa name="envelope-o"></fa> <span>{{ 'Menu.MAIL' | translate }}</span> <span class="badge bg-lightred">6</span></a>
+          <ul>
+            <li ui-sref-active="active"><a ui-sref="app.mail.inbox"><fa name="caret-right"></fa> {{ 'Menu.INBOX' | translate }}</a></li>
+            <li ui-sref-active="active"><a ui-sref="app.mail.compose"><fa name="caret-right"></fa> {{ 'Menu.COMPOSE_MAIL' | translate }}</a></li>
+            <li ui-sref-active="active"><a ui-sref="app.mail.single"><fa name="caret-right"></fa> {{ 'Menu.SINGLE_MAIL' | translate }}</a></li>
+          </ul>
+        </li>
+        <li ui-sref-active="active" ng-class="{'open':$state.includes('app.forms')}">
+          <a ui-sref="app.forms"><fa name="list"></fa> <span>{{ 'Menu.FORM_STUFF' | translate }}</span></a>
+          <ul>
+            <li ui-sref-active="active"><a ui-sref="app.forms.common"><fa name="caret-right"></fa> {{ 'Menu.COMMON_ELEMENTS' | translate }}</a></li>
+            <li ui-sref-active="active"><a ui-sref="app.forms.validate"><fa name="caret-right"></fa> {{ 'Menu.VALIDATION_ELEMENTS' | translate }}</a></li>
+            <li ui-sref-active="active"><a ui-sref="app.forms.wizard"><fa name="caret-right"></fa> {{ 'Menu.FORM_WIZARD' | translate }} <span class="badge badge-success">13</span></a></li>
+            <li ui-sref-active="active"><a ui-sref="app.forms.upload"><fa name="caret-right"></fa> {{ 'Menu.FILE_UPLOAD' | translate }}</a></li>
+            <li ui-sref-active="active"><a ui-sref="app.forms.imgcrop"><fa name="caret-right"></fa> {{ 'Menu.IMAGE_CROP' | translate }}</a></li>
+          </ul>
+        </li>
+        <li ui-sref-active="active" ng-class="{'open':$state.includes('app.ui')}">
+          <a ui-sref="app.ui"><fa name="pencil"></fa> <span>{{ 'Menu.UI_KIT' | translate }}</span></a>
+          <ul>
+            <li ui-sref-active="active"><a ui-sref="app.ui.general"><fa name="caret-right"></fa> {{ 'Menu.GENERAL_ELEMENTS' | translate }}</a></li>
+            <li ui-sref-active="active"><a ui-sref="app.ui.buttons-icons"><fa name="caret-right"></fa> {{ 'Menu.BUTTONS_ICONS' | translate }}</a></li>
+            <li ui-sref-active="active"><a ui-sref="app.ui.typography"><fa name="caret-right"></fa> {{ 'Menu.TYPOGRAPHY' | translate }}</a></li>
+            <li ui-sref-active="active"><a ui-sref="app.ui.navs"><fa name="caret-right"></fa> {{ 'Menu.NAVIGATION_ACCORDIONS' | translate }}</a></li>
+            <li ui-sref-active="active"><a ui-sref="app.ui.modals"><fa name="caret-right"></fa> {{ 'Menu.MODALS' | translate }}</a></li>
+            <li ui-sref-active="active"><a ui-sref="app.ui.tiles"><fa name="caret-right"></fa> {{ 'Menu.TILES' | translate }}</a></li>
+            <li ui-sref-active="active"><a ui-sref="app.ui.portlets"><fa name="caret-right"></fa> {{ 'Menu.PORTLETS' | translate }}</a></li>
+            <li ui-sref-active="active"><a ui-sref="app.ui.grid"><fa name="caret-right"></fa> {{ 'Menu.GRID' | translate }}</a></li>
+            <li ui-sref-active="active"><a ui-sref="app.ui.widgets"><fa name="caret-right"></fa> {{ 'Menu.WIDGETS' | translate }}</a></li>
+            <li ui-sref-active="active"><a ui-sref="app.ui.tree"><fa name="caret-right"></fa> {{ 'Menu.TREE' | translate }} </a></li>
+            <li ui-sref-active="active"><a ui-sref="app.ui.lists"><fa name="caret-right"></fa> {{ 'Menu.LISTS' | translate }}</a></li>
+            <li ui-sref-active="active"><a ui-sref="app.ui.alerts"><fa name="caret-right"></fa> {{ 'Menu.ALERTS_NOTIFICATIONS' | translate }}</a></li>
+            <li ui-sref-active="active"><a ui-sref="app.ui.masonry"><fa name="caret-right"></fa> {{ 'Menu.MASONRY' | translate }} <span class="label label-success">new</span></a></li>
+            <li ui-sref-active="active"><a ui-sref="app.ui.dragula"><fa name="caret-right"></fa> {{ 'Menu.DRAGULA' | translate }} <span class="label label-success">new</span></a></li>
+          </ul>
+        </li>
+        <li ui-sref-active="active" ng-class="{'open':$state.includes('app.material')}">
+          <a ui-sref="app.material"><fa name="puzzle-piece"></fa> <span>{{ 'Menu.MATERIAL_UI' | translate }}</span></a>
+          <ul>
+            <li ui-sref-active="active"><a ui-sref="app.material.autocomplete"><fa name="caret-right"></fa> Autocomplete</a></li>
+            <li ui-sref-active="active"><a ui-sref="app.material.bottom-sheet"><fa name="caret-right"></fa> Bottom Sheet</a></li>
+            <li ui-sref-active="active"><a ui-sref="app.material.buttons"><fa name="caret-right"></fa> Buttons</a></li>
+            <li ui-sref-active="active"><a ui-sref="app.material.cards"><fa name="caret-right"></fa> Cards</a></li>
+            <li ui-sref-active="active"><a ui-sref="app.material.checkbox"><fa name="caret-right"></fa> Checkbox</a></li>
+            <li ui-sref-active="active"><a ui-sref="app.material.chips"><fa name="caret-right"></fa> Chips</a></li>
+            <li ui-sref-active="active"><a ui-sref="app.material.content"><fa name="caret-right"></fa> Content</a></li>
+            <li ui-sref-active="active"><a ui-sref="app.material.dialog"><fa name="caret-right"></fa> Dialog</a></li>
+            <li ui-sref-active="active"><a ui-sref="app.material.divider"><fa name="caret-right"></fa> Divider</a></li>
+            <li ui-sref-active="active"><a ui-sref="app.material.fab-speed-dial"><fa name="caret-right"></fa> FAB Speed Dial</a></li>
+            <li ui-sref-active="active"><a ui-sref="app.material.fab-toolbar"><fa name="caret-right"></fa> FAB Toolbar</a></li>
+            <li ui-sref-active="active"><a ui-sref="app.material.grid-list"><fa name="caret-right"></fa> Grid List</a></li>
+            <li ui-sref-active="active"><a ui-sref="app.material.inputs"><fa name="caret-right"></fa> Inputs</a></li>
+            <li ui-sref-active="active"><a ui-sref="app.material.list"><fa name="caret-right"></fa> List</a></li>
+            <li ui-sref-active="active"><a ui-sref="app.material.menu"><fa name="caret-right"></fa> Menu</a></li>
+            <li ui-sref-active="active"><a ui-sref="app.material.progress-circular"><fa name="caret-right"></fa> Progress Circular</a></li>
+            <li ui-sref-active="active"><a ui-sref="app.material.progress-linear"><fa name="caret-right"></fa> Progress Linear</a></li>
+            <li ui-sref-active="active"><a ui-sref="app.material.radio-button"><fa name="caret-right"></fa> Radio Button</a></li>
+            <li ui-sref-active="active"><a ui-sref="app.material.select"><fa name="caret-right"></fa> Select</a></li>
+            <li ui-sref-active="active"><a ui-sref="app.material.sidenav"><fa name="caret-right"></fa> Sidenav</a></li>
+            <li ui-sref-active="active"><a ui-sref="app.material.slider"><fa name="caret-right"></fa> Slider</a></li>
+            <li ui-sref-active="active"><a ui-sref="app.material.subheader"><fa name="caret-right"></fa> Subheader</a></li>
+            <li ui-sref-active="active"><a ui-sref="app.material.swipe"><fa name="caret-right"></fa> Swipe</a></li>
+            <li ui-sref-active="active"><a ui-sref="app.material.switch"><fa name="caret-right"></fa> Switch</a></li>
+            <li ui-sref-active="active"><a ui-sref="app.material.tabs"><fa name="caret-right"></fa> Tabs</a></li>
+            <li ui-sref-active="active"><a ui-sref="app.material.toast"><fa name="caret-right"></fa> Toast</a></li>
+            <li ui-sref-active="active"><a ui-sref="app.material.toolbar"><fa name="caret-right"></fa> Toolbar</a></li>
+            <li ui-sref-active="active"><a ui-sref="app.material.tooltip"><fa name="caret-right"></fa> Tooltip</a></li>
+            <li ui-sref-active="active"><a ui-sref="app.material.whiteframe"><fa name="caret-right"></fa> Whiteframe</a></li>
+          </ul>
+        </li>
+         <li ui-sref-active="active" ng-class="{'open':$state.includes('app.shop')}">
+          <a ui-sref="app.shop"><fa name="shopping-cart"></fa> <span>{{ 'Menu.SHOP' | translate }}</span></a>
+          <ul>
+            <li ui-sref-active="active"><a ui-sref="app.shop.orders"><fa name="caret-right"></fa> {{ 'Menu.ORDERS' | translate }}</a></li>
+            <li ui-sref-active="active"><a ui-sref="app.shop.single-order"><fa name="caret-right"></fa> {{ 'Menu.SINGLE_ORDER' | translate }}</a></li>
+            <li ui-sref-active="active"><a ui-sref="app.shop.products"><fa name="caret-right"></fa> {{ 'Menu.PRODUCTS' | translate }}</a></li>
+            <li ui-sref-active="active"><a ui-sref="app.shop.single-product"><fa name="caret-right"></fa> {{ 'Menu.SINGLE_PRODUCT' | translate }}</a></li>
+            <li ui-sref-active="active"><a ui-sref="app.shop.invoices"><fa name="caret-right"></fa> {{ 'Menu.INVOICES' | translate }}</a></li>
+            <li ui-sref-active="active"><a ui-sref="app.shop.single-invoice"><fa name="caret-right"></fa> {{ 'Menu.SINGLE_INVOICE' | translate }}</a></li>
+          </ul>
+        </li>
+        <li ui-sref-active="active" ng-class="{'open':$state.includes('app.tables')}">
+          <a ui-sref="app.tables"><fa name="table"></fa> <span>{{ 'Menu.TABLES' | translate }}</span></a>
+          <ul>
+            <li ui-sref-active="active"><a ui-sref="app.tables.bootstrap"><fa name="caret-right"></fa> {{ 'Menu.BOOTSTRAP_TABLES' | translate }}</a></li>
+            <li ui-sref-active="active"><a ui-sref="app.tables.datatables"><fa name="caret-right"></fa> {{ 'Menu.DATATABLES' | translate }}</a></li>
+            <li ui-sref-active="active"><a ui-sref="app.tables.ui-grid"><fa name="caret-right"></fa> {{ 'Menu.UI_GRID' | translate }}</a></li>
+            <li ui-sref-active="active"><a ui-sref="app.tables.ng-table"><fa name="caret-right"></fa> {{ 'Menu.NGTABLE' | translate }}</a></li>
+            <li ui-sref-active="active"><a ui-sref="app.tables.smart-table"><fa name="caret-right"></fa> {{ 'Menu.SMARTTABLE' | translate }}</a></li>
+            <li ui-sref-active="active"><a ui-sref="app.tables.footable"><fa name="caret-right"></fa> {{ 'Menu.FOOTABLE' | translate }}</a></li>
+          </ul>
+        </li>
+        <li ui-sref-active="active" ng-class="{'open':$state.includes('app.pages')}">
+          <a ui-sref="app.pages"><fa name="desktop"></fa> <span>{{ 'Menu.EXTRA_PAGES' | translate }}</span></a>
+          <ul>
+            <li ui-sref-active="active"><a ui-sref="core.login"><fa name="caret-right"></fa> {{ 'Menu.LOGIN_PAGE' | translate }}</a></li>
+            <li ui-sref-active="active"><a ui-sref="core.signup"><fa name="caret-right"></fa> {{ 'Menu.SIGNUP_PAGE' | translate }}</a></li>
+            <li ui-sref-active="active"><a ui-sref="core.forgotpass"><fa name="caret-right"></fa> {{ 'Menu.FORGOT_PASSWORD_PAGE' | translate }}</a></li>
+            <li ui-sref-active="active"><a ui-sref="core.page404"><fa name="caret-right"></fa> {{ 'Menu.PAGE_404' | translate }}</a></li>
+            <li ui-sref-active="active"><a ui-sref="core.page500"><fa name="caret-right"></fa> {{ 'Menu.PAGE_500' | translate }}</a></li>
+            <li ui-sref-active="active"><a ui-sref="core.page-offline"><fa name="caret-right"></fa> {{ 'Menu.PAGE_OFFLINE' | translate }}</a></li>
+            <li ui-sref-active="active"><a ui-sref="core.locked"><fa name="caret-right"></fa> {{ 'Menu.LOCKED_SCREEN' | translate }}</a></li>
+            <li ui-sref-active="active"><a ui-sref="app.pages.gallery"><fa name="caret-right"></fa> {{ 'Menu.GALLERY' | translate }}</a></li>
+            <li ui-sref-active="active"><a ui-sref="app.pages.timeline"><fa name="caret-right"></fa> {{ 'Menu.TIMELINE' | translate }}</a></li>
+            <li ui-sref-active="active"><a ui-sref="app.pages.chat"><fa name="caret-right"></fa> {{ 'Menu.CHAT' | translate }}</a></li>
+            <li ui-sref-active="active"><a ui-sref="app.pages.search-results"><fa name="caret-right"></fa> {{ 'Menu.SEARCH_RESULTS' | translate }}</a></li>
+            <li ui-sref-active="active"><a ui-sref="app.pages.profile"><fa name="caret-right"></fa> {{ 'Menu.PROFILE_PAGE' | translate }}</a></li>
+            <li ui-sref-active="active"><a ui-sref="app.pages.intro"><fa name="caret-right"></fa> {{ 'Menu.INTRO' | translate }} <span class="label label-success">new</span></a></li>
+          </ul>
+        </li>
+        <li ui-sref-active="active" ng-class="{'open':$state.includes('app.layouts')}">
+          <a ui-sref="app.layouts"><fa name="delicious"></fa> <span>{{ 'Menu.LAYOUTS' | translate }}</span></a>
+          <ul>
+            <li ui-sref-active="active"><a ui-sref="app.layouts.boxed"><fa name="caret-right"></fa> {{ 'Menu.BOXED_LAYOUT' | translate }}</a></li>
+            <li ui-sref-active="active"><a ui-sref="app.layouts.fullwidth"><fa name="caret-right"></fa> {{ 'Menu.FULL_WIDTH_LAYOUT' | translate }}</a></li>
+            <li ui-sref-active="active"><a ui-sref="app.layouts.sidebar-sm"><fa name="caret-right"></fa> {{ 'Menu.SMALL_SIDEBAR' | translate }}</a></li>
+            <li ui-sref-active="active"><a ui-sref="app.layouts.sidebar-xs"><fa name="caret-right"></fa> {{ 'Menu.EXTRA_SMALL_SIDEBAR' | translate }}</a></li>
+            <li ui-sref-active="active"><a ui-sref="app.layouts.offcanvas"><fa name="caret-right"></fa> {{ 'Menu.OFFCANVAS_SIDEBAR' | translate }}</a></li>
+            <li ui-sref-active="active"><a ui-sref="app.layouts.hz-menu"><fa name="caret-right"></fa> {{ 'Menu.HORIZONTAL_MENU' | translate }}</a></li>
+            <li ui-sref-active="active"><a ui-sref="app.layouts.rtl"><fa name="caret-right"></fa> {{ 'Menu.RTL_LAYOUT' | translate }}</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#/frontend"><fa name="file-o"></fa> <span>{{ 'Menu.FRONT_THEMES' | translate }}</span></a>
+          <ul>
+            <li><a href="http://www.tattek.sk/minovate-corp" target="_blank"><fa name="caret-right"></fa> {{ 'Menu.CORPORATE' | translate }}</a></li>
+            <li><a href="http://www.tattek.sk/minovate-commerce" target="_blank"><fa name="caret-right"></fa> {{ 'Menu.COMMERCE' | translate }}</a></li>
+          </ul>
+        </li>
+        <li ui-sref-active="active" ng-class="{'open':$state.includes('app.maps')}">
+          <a ui-sref="app.maps"><fa name="map-marker"></fa> <span>{{ 'Menu.MAPS' | translate }}</span></a>
+          <ul>
+            <li ui-sref-active="active"><a ui-sref="app.maps.vector"><fa name="caret-right"></fa> {{ 'Menu.VECTOR_MAPS' | translate }}</a></li>
+            <li ui-sref-active="active"><a ui-sref="app.maps.google"><fa name="caret-right"></fa> {{ 'Menu.GOOGLE_MAPS' | translate }}</a></li>
+            <li ui-sref-active="active"><a ui-sref="app.maps.leaflet"><fa name="caret-right"></fa> {{ 'Menu.LEAFLET_MAPS' | translate }}</a></li>
+          </ul>
+        </li>
+        <li ui-sref-active="active"><a ui-sref="app.calendar"><fa name="calendar-o"></fa> <span>{{ 'Menu.CALENDAR' | translate }}</span> <span class="label label-success">new events</span></a></li>
+        <li ui-sref-active="active"><a ui-sref="app.charts"><fa name="bar-chart-o"></fa> <span>{{ 'Menu.CHARTS_GRAPHS' | translate }}</span></a></li>
+
+        <li>
+          <a href="javascript:;"><fa name="magic"></fa> <span>{{ 'Menu.MENU_LEVELS' | translate }}</span></a>
+          <ul>
+            <li>
+              <a href="javascript:;"><fa name="caret-right"></fa> {{ 'Menu.MENU_LEVEL' | translate }} 1.1</a>
+               <ul>
+                  <li><a href="javascript:;"><fa name="caret-right"></fa> {{ 'Menu.MENU_LEVEL' | translate }} 2.1</a></li>
+                  <li><a href="javascript:;"><fa name="caret-right"></fa> {{ 'Menu.MENU_LEVEL' | translate }} 2.2</a></li>
+                  <li>
+                    <a href="javascript:;"><fa name="caret-right"></fa> {{ 'Menu.MENU_LEVEL' | translate }} 2.3</a>
+                    <ul>
+                      <li><a href="javascript:;"><fa name="caret-right"></fa> {{ 'Menu.MENU_LEVEL' | translate }} 3.1</a></li>
+                      <li><a href="javascript:;"><fa name="caret-right"></fa> {{ 'Menu.MENU_LEVEL' | translate }} 3.2</a></li>
+                    </ul>
+                  </li>
+                </ul>
+            </li>
+            <li>
+              <a href="javascript:;"><fa name="caret-right"></fa> {{ 'Menu.MENU_LEVEL' | translate }} 1.2</a>
+              <ul>
+                <li>
+                  <a href="javascript:;"><fa name="caret-right"></fa> {{ 'Menu.MENU_LEVEL' | translate }} 2.1</a>
+                  <ul>
+                    <li><a href="javascript:;"><fa name="caret-right"></fa> {{ 'Menu.MENU_LEVEL' | translate }} 3.1</a></li>
+                    <li>
+                      <a href="javascript:;"><fa name="caret-right"></fa> {{ 'Menu.MENU_LEVEL' | translate }} 3.2</a>
+                      <ul>
+                        <li><a href="javascript:;"><fa name="caret-right"></fa> {{ 'Menu.MENU_LEVEL' | translate }} 4.1</a></li>
+                        <li><a href="javascript:;"><fa name="caret-right"></fa> {{ 'Menu.MENU_LEVEL' | translate }} 4.2</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="javascript:;"><fa name="caret-right"></fa> {{ 'Menu.MENU_LEVEL' | translate }} 3.3</a></li>
+                  </ul>
+                </li>
+                <li><a href="javascript:;"><fa name="caret-right"></fa> {{ 'Menu.MENU_LEVEL' | translate }} 2.2</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li ui-sref-active="active"><a ui-sref="app.help"><fa name="book"></fa> <span>{{ 'Menu.DOCUMENTATION' | translate }}</span></a></li>
+      </ul>
+    </uib-accordion-group>
+
+    <uib-accordion-group is-open="status.isSecondOpen" class="charts" ng-class="{'open': status.isSecondOpen, 'closed': !status.isSecondOpen}">
+      <uib-accordion-heading>
+        Orders Summary <i class="pull-right fa" ng-class="{'fa-angle-up': status.isSecondOpen, 'fa-angle-down': !status.isSecondOpen}"></i>
+      </uib-accordion-heading>
+
+      <div ng-controller="SparklineCtrl" class="summary">
+
+        <div class="media">
+          <a class="pull-right" href="#">
+            <span sparkline data="navChart1.data" options="navChart1.options"></span>
+          </a>
+          <div class="media-body">
+            This week sales
+            <h4 class="media-heading">26, 149</h4>
+          </div>
+        </div>
+
+        <div class="media">
+          <a class="pull-right" href="#">
+            <span sparkline data="navChart2.data" options="navChart2.options"></span>
+          </a>
+          <div class="media-body">
+            This week balance
+            <h4 class="media-heading">318, 651</h4>
+          </div>
+        </div>
+
+      </div>
+
+    </uib-accordion-group>
+
+    <uib-accordion-group is-open="status.isThirdOpen" class="settings" ng-class="{'open': status.isThirdOpen, 'closed': !status.isThirdOpen}">
+      <uib-accordion-heading>
+        General Settings <i class="pull-right fa" ng-class="{'fa-angle-up': status.isThirdOpen, 'fa-angle-down': !status.isThirdOpen}"></i>
+      </uib-accordion-heading>
+
+      <div class="form-group">
+        <div class="row">
+          <label class="col-xs-8 control-label">Switch ON</label>
+          <div class="col-xs-4 control-label">
+            <div class="onoffswitch greensea">
+              <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="switch-on" checked="">
+              <label class="onoffswitch-label" for="switch-on">
+                <span class="onoffswitch-inner"></span>
+                <span class="onoffswitch-switch"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="row">
+          <label class="col-xs-8 control-label">Switch OFF</label>
+          <div class="col-xs-4 control-label">
+            <div class="onoffswitch greensea">
+              <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="switch-off">
+              <label class="onoffswitch-label" for="switch-off">
+                <span class="onoffswitch-inner"></span>
+                <span class="onoffswitch-switch"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </uib-accordion-group>
+
+  </uib-accordion>
+</div>

@@ -1,0 +1,100 @@
+.introjs-overlay {
+  background: #000;
+}
+
+.introjs-tooltip {
+  background: transparent;
+  box-shadow: none;
+  min-width: 300px;
+  max-width: 500px;
+
+  .introjs-tooltiptext {
+    color: white;
+
+    .header {
+      font-weight: $font-weight-bold;
+      text-transform: uppercase;
+      font-size: 22px;
+      letter-spacing: 1px;
+      margin-top: 10px;
+    }
+
+    p {
+      font-weight: $font-weight-light;
+      opacity: .8;
+    }
+  }
+}
+
+.introjs-arrow {
+  display: none!important;
+}
+
+.introjs-skipbutton {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: none;
+  color: rgba(255,255,255,.75);
+  border: 2px solid rgba(255,255,255,.75);
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  padding: 0;
+  margin: 0;
+  font-size: 30px;
+  text-align: center;
+  border-radius: 100%;
+  text-shadow: none;
+
+  &:hover,
+  &:focus,
+  &:active {
+    border: 2px solid $lightred;
+    background: $lightred;
+    color: white;
+    box-shadow: none;
+  }
+}
+
+.introjs-nextbutton,
+.introjs-prevbutton {
+  background: $active-el;
+  border: 0;
+  text-shadow: none;
+  border-radius: 40px;
+  color: rgba(255,255,255,.75);
+  padding: 10px 20px;
+  font-size: 12px;
+
+  i {
+    margin: 0 5px;
+    font-size: 10px;
+  }
+
+  &:hover {
+    box-shadow: none;
+    color: white;
+  }
+
+  &:focus,
+  &:active {
+    background: $active-el;
+    color: white;
+    text-decoration: none;
+  }
+
+  &.introjs-disabled {
+    display: none;
+  }
+}
+
+.introjs-prevbutton {
+  float: left;
+}
+
+.introjs-helperLayer {
+  border-radius: 0;
+  border: 0;
+  box-shadow: none;
+}

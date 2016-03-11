@@ -1,0 +1,155 @@
+<div class="page page-material">
+
+
+
+
+  <!-- page header -->
+  <div class="pageheader">
+
+    <h2>{{page.title}} <span>// {{page.subtitle}}</span></h2>
+
+    <div class="page-bar">
+
+      <ul class="page-breadcrumb">
+        <li>
+          <a ui-sref="app.dashboard"><i class="fa fa-home"></i> {{main.title}}</a>
+        </li>
+        <li>
+          <a href="javascript:;">Material UI</a>
+        </li>
+        <li>
+          <a ui-sref="app.material.buttons">{{page.title}}</a>
+        </li>
+      </ul>
+
+    </div>
+
+  </div>
+  <!-- /page header -->
+
+
+
+
+
+
+  <!-- page content -->
+  <div class="pagecontent">
+
+    <div flex layout="column">
+
+      <section class="demo-container md-whiteframe-z1">
+
+        <md-toolbar>
+          <div class="md-toolbar-tools">
+            <md-button class="md-icon-button" aria-label="Settings">
+              <md-icon md-font-icon="zmdi zmdi-menu"></md-icon>
+            </md-button>
+            <h2>
+              <span>Basic Usage</span>
+            </h2>
+            <span flex></span>
+            <md-menu md-position-mode="target-right target">
+              <md-button aria-label="More" class="md-icon-button" ng-click="$mdOpenMenu()">
+                <md-icon md-menu-origin md-font-icon="zmdi zmdi-more-vert"></md-icon>
+              </md-button>
+              <md-menu-content width="4">
+                <md-menu-item ng-repeat="item in [1, 2, 3]">
+                  <md-button>
+                    Option {{item}}
+                  </md-button>
+                </md-menu-item>
+              </md-menu-content>
+            </md-menu>
+          </div>
+        </md-toolbar>
+
+        <md-content class="md-padding buttondemoBasicUsage">
+
+          <section layout="row" layout-sm="column" layout-align="center center">
+            <md-button>Button</md-button>
+            <md-button md-no-ink class="md-primary">Primary (md-noink)</md-button>
+            <md-button ng-disabled="true" class="md-primary">Disabled</md-button>
+            <md-button class="md-warn">Warn</md-button>
+            <div class="label">Flat</div>
+          </section>
+
+          <section layout="row" layout-sm="column" layout-align="center center">
+            <md-button class="md-raised">Button</md-button>
+            <md-button class="md-raised md-primary">Primary</md-button>
+            <md-button ng-disabled="true" class="md-raised md-primary">Disabled</md-button>
+            <md-button class="md-raised md-warn">Warn</md-button>
+            <div class="label">Raised</div>
+          </section>
+
+          <section layout="row" layout-sm="column" layout-align="center center">
+            <md-button class="md-fab" aria-label="Eat cake">
+              <md-icon md-font-icon="zmdi zmdi-cake"></md-icon>
+            </md-button>
+            <md-button class="md-fab md-primary" aria-label="Use Android">
+              <md-icon md-font-icon="zmdi zmdi-android"></md-icon>
+            </md-button>
+            <md-button class="md-fab" ng-disabled="true" aria-label="Comment">
+              <md-icon md-font-icon="zmdi zmdi-comment-text"></md-icon>
+            </md-button>
+            <md-button class="md-fab md-primary md-hue-2" aria-label="Profile">
+              <md-icon md-font-icon="zmdi zmdi-accounts"></md-icon>
+            </md-button>
+            <md-button class="md-fab md-mini" aria-label="Eat cake">
+              <md-icon md-font-icon="zmdi zmdi-cake"></md-icon>
+            </md-button>
+            <md-button class="md-fab md-mini md-primary" aria-label="Use Android">
+              <md-icon md-font-icon="zmdi zmdi-android" style="color: greenyellow;"></md-icon>
+            </md-button>
+            <div class="label">FAB</div>
+          </section>
+
+          <section layout="row" layout-sm="column" layout-align="center center">
+            <md-button ng-href="{{googleUrl}}" target="_blank">Default Link</md-button>
+            <md-button class="md-primary" ng-href="{{googleUrl}}" target="_blank">Primary Link</md-button>
+            <md-button>Default Button</md-button>
+            <div class="label">Link vs. Button</div>
+          </section>
+
+          <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+            <md-button class="md-primary md-hue-1">Primary Hue 1</md-button>
+            <md-button class="md-warn md-raised md-hue-2">Warn Hue 2</md-button>
+            <md-button class="md-accent">Accent</md-button>
+            <md-button class="md-accent md-raised md-hue-1">Accent Hue 1</md-button>
+            <div class="label">Themed</div>
+          </section>
+
+          <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+            <md-button class="md-icon-button md-primary" aria-label="Settings">
+              <md-icon md-font-icon="zmdi zmdi-menu"></md-icon>
+            </md-button>
+            <md-button class="md-icon-button md-accent" aria-label="Favorite">
+              <md-icon md-font-icon="zmdi zmdi-favorite"></md-icon>
+            </md-button>
+            <md-button class="md-icon-button" aria-label="More">
+              <md-icon md-font-icon="zmdi zmdi-more-vert"></md-icon>
+            </md-button>
+            <md-button href="http://google.com"
+                       title="Launch Google.com in new window"
+                       target="_blank"
+                       ng-disabled="true"
+                       aria-label="Google.com"
+                       class="md-icon-button launch" >
+              <md-icon md-font-icon="zmdi zmdi-sign-in"></md-icon>
+            </md-button>
+            <div class="label">Icon Button</div>
+          </section>
+
+        </md-content>
+
+      </section>
+
+    </div>
+
+
+  </div>
+  <!-- /page content -->
+
+
+
+
+</div>

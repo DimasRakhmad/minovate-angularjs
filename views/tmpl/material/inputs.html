@@ -1,0 +1,251 @@
+<div class="page page-material">
+
+
+
+
+  <!-- page header -->
+  <div class="pageheader">
+
+    <h2>{{page.title}} <span>// {{page.subtitle}}</span></h2>
+
+    <div class="page-bar">
+
+      <ul class="page-breadcrumb">
+        <li>
+          <a ui-sref="app.dashboard"><i class="fa fa-home"></i> {{main.title}}</a>
+        </li>
+        <li>
+          <a href="javascript:;">Material UI</a>
+        </li>
+        <li>
+          <a ui-sref="app.material.inputs">{{page.title}}</a>
+        </li>
+      </ul>
+
+    </div>
+
+  </div>
+  <!-- /page header -->
+
+
+
+
+
+
+  <!-- page content -->
+  <div class="pagecontent">
+
+    <div flex layout="column">
+
+      <section class="demo-container md-whiteframe-z1">
+
+        <md-toolbar>
+          <div class="md-toolbar-tools">
+            <md-button class="md-icon-button" aria-label="Settings">
+              <md-icon md-font-icon="zmdi zmdi-menu"></md-icon>
+            </md-button>
+            <h2>
+              <span>Basic Usage</span>
+            </h2>
+            <span flex></span>
+            <md-menu md-position-mode="target-right target">
+              <md-button aria-label="More" class="md-icon-button" ng-click="$mdOpenMenu()">
+                <md-icon md-menu-origin md-font-icon="zmdi zmdi-more-vert"></md-icon>
+              </md-button>
+              <md-menu-content width="4">
+                <md-menu-item ng-repeat="item in [1, 2, 3]">
+                  <md-button>
+                    Option {{item}}
+                  </md-button>
+                </md-menu-item>
+              </md-menu-content>
+            </md-menu>
+          </div>
+        </md-toolbar>
+
+        <md-content md-theme="docs-dark" layout-padding layout="row" layout-sm="column">
+          <md-input-container>
+            <label>Title</label>
+            <input ng-model="user.title">
+          </md-input-container>
+          <md-input-container>
+            <label>Email</label>
+            <input ng-model="user.email" type="email">
+          </md-input-container>
+        </md-content>
+        <md-content layout-padding>
+          <form name="userForm">
+            <div layout layout-sm="column">
+              <md-input-container style="width:80%">
+                <label>Company (Disabled)</label>
+                <input ng-model="user.company" disabled>
+              </md-input-container>
+              <md-input-container flex>
+                <label>Submission Date</label>
+                <input type="date" ng-model="user.submissionDate">
+              </md-input-container>
+            </div>
+            <div layout layout-sm="column">
+              <md-input-container flex>
+                <label>First name</label>
+                <input ng-model="user.firstName">
+              </md-input-container>
+              <md-input-container flex>
+                <label>Last Name</label>
+                <input ng-model="theMax">
+              </md-input-container>
+            </div>
+            <md-input-container flex>
+              <label>Address</label>
+              <input ng-model="user.address">
+            </md-input-container>
+            <md-input-container md-no-float>
+              <input ng-model="user.address2" placeholder="Address 2">
+            </md-input-container>
+            <div layout layout-sm="column">
+              <md-input-container flex>
+                <label>City</label>
+                <input ng-model="user.city">
+              </md-input-container>
+              <md-input-container flex>
+                <label>State</label>
+                <input ng-model="user.state">
+              </md-input-container>
+              <md-input-container flex>
+                <label>Postal Code</label>
+                <input ng-model="user.postalCode">
+              </md-input-container>
+            </div>
+            <md-input-container flex>
+              <label>Biography</label>
+              <textarea ng-model="user.biography" columns="1" md-maxlength="150"></textarea>
+            </md-input-container>
+          </form>
+        </md-content>
+
+      </section>
+
+      <section class="demo-container md-whiteframe-z1">
+
+        <md-toolbar>
+          <div class="md-toolbar-tools">
+            <md-button class="md-icon-button" aria-label="Settings">
+              <md-icon md-font-icon="zmdi zmdi-menu"></md-icon>
+            </md-button>
+            <h2>
+              <span>Errors</span>
+            </h2>
+            <span flex></span>
+            <md-menu md-position-mode="target-right target">
+              <md-button aria-label="More" class="md-icon-button" ng-click="$mdOpenMenu()">
+                <md-icon md-menu-origin md-font-icon="zmdi zmdi-more-vert"></md-icon>
+              </md-button>
+              <md-menu-content width="4">
+                <md-menu-item ng-repeat="item in [1, 2, 3]">
+                  <md-button>
+                    Option {{item}}
+                  </md-button>
+                </md-menu-item>
+              </md-menu-content>
+            </md-menu>
+          </div>
+        </md-toolbar>
+
+        <md-toolbar class="md-primary">
+          <h1 class="md-toolbar-tools">
+            Top Secret Project
+          </h1>
+        </md-toolbar>
+        <md-content layout-padding>
+          <form name="projectForm">
+            <md-input-container>
+              <label>Description</label>
+              <input md-maxlength="30" required name="description" ng-model="project.description">
+              <div ng-messages="projectForm.description.$error">
+                <div ng-message="required">This is required.</div>
+                <div ng-message="md-maxlength">The name has to be less than 30 characters long.</div>
+              </div>
+            </md-input-container>
+            <md-input-container>
+              <label>Client Name</label>
+              <input required name="clientName" ng-model="project.clientName">
+              <div ng-messages="projectForm.clientName.$error">
+                <div ng-message="required">This is required.</div>
+              </div>
+            </md-input-container>
+            <md-input-container>
+              <label>Hourly Rate (USD)</label>
+              <input required type="number" step="any" name="rate" ng-model="project.rate" min="800" max="4999">
+              <div ng-messages="projectForm.rate.$error">
+                <div ng-message="required">You've got to charge something! You can't just <b>give away</b> a Missile Defense System.</div>
+                <div ng-message="min">You should charge at least $800 an hour. This job is a big deal... if you mess up, everyone dies!</div>
+                <div ng-message="max">$5,000 an hour? That's a little ridiculous. I doubt event Bill Clinton could afford that.</div>
+              </div>
+            </md-input-container>
+          </form>
+        </md-content>
+
+
+      </section>
+
+      <section class="demo-container md-whiteframe-z1">
+
+        <md-toolbar>
+          <div class="md-toolbar-tools">
+            <md-button class="md-icon-button" aria-label="Settings">
+              <md-icon md-font-icon="zmdi zmdi-menu"></md-icon>
+            </md-button>
+            <h2>
+              <span>Icons</span>
+            </h2>
+            <span flex></span>
+            <md-menu md-position-mode="target-right target">
+              <md-button aria-label="More" class="md-icon-button" ng-click="$mdOpenMenu()">
+                <md-icon md-menu-origin md-font-icon="zmdi zmdi-more-vert"></md-icon>
+              </md-button>
+              <md-menu-content width="4">
+                <md-menu-item ng-repeat="item in [1, 2, 3]">
+                  <md-button>
+                    Option {{item}}
+                  </md-button>
+                </md-menu-item>
+              </md-menu-content>
+            </md-menu>
+          </div>
+        </md-toolbar>
+
+        <md-content layout-padding class="autoScroll inputdemoIcons">
+          <br/>
+          <md-input-container class="md-icon-float" >
+            <!-- Use floating label instead of placeholder -->
+            <label>Name</label>
+            <md-icon md-font-icon="zmdi zmdi-account" class="name"></md-icon>
+            <input ng-model="user2.name" type="text">
+          </md-input-container>
+          <md-input-container md-no-float>
+            <md-icon md-font-icon="zmdi zmdi-phone"></md-icon>
+            <input ng-model="user2.phone" type="text" placeholder="Phone Number">
+          </md-input-container>
+          <md-input-container >
+            <!-- Use floating placeholder instead of label -->
+            <md-icon md-font-icon="zmdi zmdi-email" class="email"></md-icon>
+            <input ng-model="user2.email" type="email" placeholder="Email (required)" ng-required="true">
+          </md-input-container>
+          <md-input-container md-no-float>
+            <md-icon md-font-icon="zmdi zmdi-pin" style="display:inline-block;"></md-icon>
+            <input ng-model="user2.address" type="text" placeholder="Address" >
+          </md-input-container>
+        </md-content>
+
+      </section>
+
+    </div>
+
+
+  </div>
+  <!-- /page content -->
+
+
+
+
+</div>

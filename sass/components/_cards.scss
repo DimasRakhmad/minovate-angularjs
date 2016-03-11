@@ -1,0 +1,196 @@
+/*********************************/
+/************* CARDS *************/
+/*********************************/
+
+.card-container {
+  position: relative;
+
+  .card {
+    min-height: 110px;
+    margin-bottom: 20px;
+    position: relative;
+    @include perspective(600px);
+    width: 100%;
+    cursor: pointer;
+    z-index: 9;
+
+    .front {
+      height: 100%;
+      position: relative;
+      width: 100%;
+      padding: 28px;
+      top: 0;
+      left: 0;
+      z-index: 11;
+
+      @include transform(rotateX(0deg) rotateY(0deg));
+
+      @include transform-style(preserve-3d);
+
+      @include backface-visibility(hidden);
+
+      /* -- transition is the magic sauce for animation -- */
+      @include transition(all .4s ease-in-out);
+    }
+
+    &:hover {
+      .front {
+        z-index: 11;
+        @include transform(rotateY(180deg));
+      }
+
+      .back {
+        z-index: 12;
+        @include transform(rotateX(0deg) rotateY(0deg));
+      }
+    }
+
+    .back {
+      position: absolute;
+      top: 0;
+      border: 0;
+      height: 100%;
+      width: 100%;
+      left: 0;
+      z-index: 10;
+
+      -webkit-transform: rotateY(-180deg);
+         -moz-transform: rotateY(-179deg); /* setting to 180 causes an unnatural-looking half-flip */
+              transform: rotateY(-179deg);
+
+      @include transform-style(preserve-3d);
+
+      @include backface-visibility(hidden);
+
+      /* -- transition is the magic sauce for animation -- */
+      @include transition(all .4s ease-in-out);
+
+      >.row {
+        height: 100%;
+        margin: 0;
+
+        >div {
+          height: 100%;
+          padding: 0;
+
+          a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            padding: 30px 10px 10px;
+
+            i {
+              display: block;
+              margin-bottom: 5px;
+            }
+
+            &:hover {
+              text-decoration: none;
+            }
+          }
+
+          &:first-of-type {
+            a {
+              background-color: $transparent-black-1;
+            }
+          }
+
+          &:nth-of-type(2) {
+            a {
+              background-color: $transparent-black-05;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .card-container .card .front {
+    padding: 28px 10px;
+  }
+}
+
+// task containers
+
+.task-container {
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  background-color: white;
+  margin-bottom: 15px;
+  border-left: 3px solid;
+  position: relative;
+  @include transition(all .25s linear);
+
+  &.priority-high {
+    border-left-color: $brand-danger;
+
+    .task-priority {
+      color: $brand-danger;
+    }
+  }
+  &.priority-medium {
+    border-left-color: $brand-warning;
+
+    .task-priority {
+      color: $brand-warning;
+    }
+  }
+  &.priority-normal {
+    border-left-color: $font-color;
+
+    .task-priority {
+      color: $font-color;
+    }
+  }
+  &.priority-low {
+    border-left-color: $brand-success;
+
+    .task-priority {
+      color: $brand-success;
+    }
+  }
+
+  .task-name {
+    margin: 0;
+    font-size: 18px;
+    color: #222;
+  }
+
+  .task-meta {
+    font-size: 12px;
+    color: #999;
+  }
+
+  .task-priority {
+    font-size: 10px;
+    text-transform: uppercase;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+  }
+
+  .task-desc {
+    margin-top: 20px;
+    font-size: 13px;
+    line-height: 1.8;
+    color: #555;
+  }
+
+  &:hover {
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+    cursor: grab;
+  }
+
+  &.drag-task {
+    margin: 0;
+    cursor: move;
+    box-shadow: 0 0 30px 5px rgba(0, 0, 0, 0.5);
+    position: fixed !important;
+    z-index: 9999 !important;
+  }
+}
+
+

@@ -1,0 +1,141 @@
+<div class="page page-material">
+
+
+
+
+  <!-- page header -->
+  <div class="pageheader">
+
+    <h2>{{page.title}} <span>// {{page.subtitle}}</span></h2>
+
+    <div class="page-bar">
+
+      <ul class="page-breadcrumb">
+        <li>
+          <a ui-sref="app.dashboard"><i class="fa fa-home"></i> {{main.title}}</a>
+        </li>
+        <li>
+          <a href="javascript:;">Material UI</a>
+        </li>
+        <li>
+          <a ui-sref="app.material.slider">{{page.title}}</a>
+        </li>
+      </ul>
+
+    </div>
+
+  </div>
+  <!-- /page header -->
+
+
+
+
+
+
+  <!-- page content -->
+  <div class="pagecontent">
+
+    <div flex layout="column">
+
+      <section class="demo-container md-whiteframe-z1">
+
+        <md-toolbar>
+          <div class="md-toolbar-tools">
+            <md-button class="md-icon-button" aria-label="Settings">
+              <md-icon md-font-icon="zmdi zmdi-menu"></md-icon>
+            </md-button>
+            <h2>
+              <span>Basic Usage</span>
+            </h2>
+            <span flex></span>
+            <md-menu md-position-mode="target-right target">
+              <md-button aria-label="More" class="md-icon-button" ng-click="$mdOpenMenu()">
+                <md-icon md-menu-origin md-font-icon="zmdi zmdi-more-vert"></md-icon>
+              </md-button>
+              <md-menu-content width="4">
+                <md-menu-item ng-repeat="item in [1, 2, 3]">
+                  <md-button>
+                    Option {{item}}
+                  </md-button>
+                </md-menu-item>
+              </md-menu-content>
+            </md-menu>
+          </div>
+        </md-toolbar>
+
+        <md-content style="margin: 16px; padding:16px">
+          <h3>
+            RGB <span ng-attr-style="border: 1px solid #333; background: rgb({{color.red}},{{color.green}},{{color.blue}})">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+          </h3>
+          <div layout>
+            <div flex="10" layout layout-align="center center">
+              <span class="md-body-1">R</span>
+            </div>
+            <md-slider flex min="0" max="255" ng-model="color.red" aria-label="red" id="red-slider" class>
+            </md-slider>
+            <div flex="20" layout layout-align="center center">
+              <input type="number" ng-model="color.red" aria-label="red" aria-controls="red-slider" class="text-center">
+            </div>
+          </div>
+          <div layout>
+            <div flex="10" layout layout-align="center center">
+              <span class="md-body-1">G</span>
+            </div>
+            <md-slider flex ng-model="color.green" min="0" max="255" aria-label="green" id="green-slider" class="md-accent">
+            </md-slider>
+            <div flex="20" layout layout-align="center center">
+              <input type="number" ng-model="color.green" aria-label="green" aria-controls="green-slider" class="text-center">
+            </div>
+          </div>
+          <div layout>
+            <div flex="10" layout layout-align="center center">
+              <span class="md-body-1">B</span>
+            </div>
+            <md-slider flex ng-model="color.blue" min="0" max="255" aria-label="blue" id="blue-slider" class="md-primary">
+            </md-slider>
+            <div flex="20" layout layout-align="center center">
+              <input type="number" ng-model="color.blue" aria-label="blue" aria-controls="blue-slider" class="text-center">
+            </div>
+          </div>
+          <h3>Rating: {{rating}}/5 - demo of theming classes</h3>
+          <div layout>
+            <div flex="10" layout layout-align="center center">
+              <span class="md-body-1">default</span>
+            </div>
+            <md-slider flex md-discrete ng-model="rating1" step="1" min="1" max="5" aria-label="rating">
+            </md-slider>
+          </div>
+          <div layout>
+            <div flex="10" layout layout-align="center center">
+              <span class="md-body-1">md-warn</span>
+            </div>
+            <md-slider flex class="md-warn" md-discrete ng-model="rating2" step="1" min="1" max="5" aria-label="rating">
+            </md-slider>
+          </div>
+          <div layout>
+            <div flex="10" layout layout-align="center center">
+              <span class="md-body-1">md-primary</span>
+            </div>
+            <md-slider flex class="md-primary" md-discrete ng-model="rating3" step="1" min="1" max="5" aria-label="rating">
+            </md-slider>
+          </div>
+          <h3>Disabled</h3>
+          <md-slider ng-model="disabled1" ng-disabled="true" aria-label="Disabled 1"></md-slider>
+          <md-slider ng-model="disabled2" ng-disabled="true" aria-label="Disabled 2"></md-slider>
+          <h3>Disabled, Discrete</h3>
+          <md-slider ng-model="disabled1" ng-disabled="true" step="3" md-discrete min="0" max="10" aria-label="Disabled discrete 1"></md-slider>
+          <md-slider ng-model="disabled2" ng-disabled="true" step="10" md-discrete aria-label="Disabled discrete 2"></md-slider>
+        </md-content>
+
+      </section>
+
+    </div>
+
+
+  </div>
+  <!-- /page content -->
+
+
+
+
+</div>

@@ -1,0 +1,213 @@
+<div class="page page-material">
+
+
+
+
+  <!-- page header -->
+  <div class="pageheader">
+
+    <h2>{{page.title}} <span>// {{page.subtitle}}</span></h2>
+
+    <div class="page-bar">
+
+      <ul class="page-breadcrumb">
+        <li>
+          <a ui-sref="app.dashboard"><i class="fa fa-home"></i> {{main.title}}</a>
+        </li>
+        <li>
+          <a href="javascript:;">Material UI</a>
+        </li>
+        <li>
+          <a ui-sref="app.material.grid-list">{{page.title}}</a>
+        </li>
+      </ul>
+
+    </div>
+
+  </div>
+  <!-- /page header -->
+
+
+
+
+
+
+  <!-- page content -->
+  <div class="pagecontent">
+
+    <div flex layout="column">
+
+      <section class="demo-container md-whiteframe-z1">
+
+        <md-toolbar>
+          <div class="md-toolbar-tools">
+            <md-button class="md-icon-button" aria-label="Settings">
+              <md-icon md-font-icon="zmdi zmdi-menu"></md-icon>
+            </md-button>
+            <h2>
+              <span>Basic Usage</span>
+            </h2>
+            <span flex></span>
+            <md-menu md-position-mode="target-right target">
+              <md-button aria-label="More" class="md-icon-button" ng-click="$mdOpenMenu()">
+                <md-icon md-menu-origin md-font-icon="zmdi zmdi-more-vert"></md-icon>
+              </md-button>
+              <md-menu-content width="4">
+                <md-menu-item ng-repeat="item in [1, 2, 3]">
+                  <md-button>
+                    Option {{item}}
+                  </md-button>
+                </md-menu-item>
+              </md-menu-content>
+            </md-menu>
+          </div>
+        </md-toolbar>
+
+        <md-content class="md-padding gridListdemoBasicUsage">
+
+          <md-grid-list
+            md-cols-sm="1" md-cols-md="2" md-cols-gt-md="6"
+            md-row-height-gt-md="1:1" md-row-height="2:2"
+            md-gutter="12px" md-gutter-gt-sm="8px" >
+            <md-grid-tile class="gray"
+                          md-rowspan="3" md-colspan="2" md-colspan-sm="1">
+              <md-grid-tile-footer>
+                <h3>#1: (3r x 2c)</h3>
+              </md-grid-tile-footer>
+            </md-grid-tile>
+            <md-grid-tile class="green">
+              <md-grid-tile-footer>
+                <h3>#2: (1r x 1c)</h3>
+              </md-grid-tile-footer>
+            </md-grid-tile>
+            <md-grid-tile class="yellow">
+              <md-grid-tile-footer>
+                <h3>#3: (1r x 1c)</h3>
+              </md-grid-tile-footer>
+            </md-grid-tile>
+            <md-grid-tile class="blue"
+                          md-rowspan="2">
+              <md-grid-tile-footer>
+                <h3>#4: (2r x 1c)</h3>
+              </md-grid-tile-footer>
+            </md-grid-tile>
+            <md-grid-tile class="red"
+                          md-rowspan="2" md-colspan="2" md-colspan-sm="1">
+              <md-grid-tile-footer>
+                <h3>#5: (2r x 2c)</h3>
+              </md-grid-tile-footer>
+            </md-grid-tile>
+            <md-grid-tile class="green"
+                          md-rowspan="2" >
+              <md-grid-tile-footer>
+                <h3>#6: (2r x 1c)</h3>
+              </md-grid-tile-footer>
+            </md-grid-tile>
+          </md-grid-list>
+
+        </md-content>
+
+      </section>
+
+      <section class="demo-container md-whiteframe-z1">
+
+        <md-toolbar>
+          <div class="md-toolbar-tools">
+            <md-button class="md-icon-button" aria-label="Settings">
+              <md-icon md-font-icon="zmdi zmdi-menu"></md-icon>
+            </md-button>
+            <h2>
+              <span>Dynamic Tiles</span>
+            </h2>
+            <span flex></span>
+            <md-menu md-position-mode="target-right target">
+              <md-button aria-label="More" class="md-icon-button" ng-click="$mdOpenMenu()">
+                <md-icon md-menu-origin md-font-icon="zmdi zmdi-more-vert"></md-icon>
+              </md-button>
+              <md-menu-content width="4">
+                <md-menu-item ng-repeat="item in [1, 2, 3]">
+                  <md-button>
+                    Option {{item}}
+                  </md-button>
+                </md-menu-item>
+              </md-menu-content>
+            </md-menu>
+          </div>
+        </md-toolbar>
+
+        <md-content class="md-padding gridListdemoDynamicTiles" ng-controller="gridListDemoCtrl as vm">
+
+          <md-grid-list
+            md-cols-sm="1" md-cols-md="2" md-cols-gt-md="6"
+            md-row-height-gt-md="1:1" md-row-height="4:3"
+            md-gutter="8px" md-gutter-gt-sm="4px" >
+            <md-grid-tile ng-repeat="tile in vm.tiles"
+                          md-rowspan="{{tile.span.row}}"
+                          md-colspan="{{tile.span.col}}"
+                          md-colspan-sm="1"
+                          ng-class="tile.background" >
+              <md-icon md-svg-icon="{{tile.icon}}"></md-icon>
+              <md-grid-tile-footer><h3>{{tile.title}}</h3></md-grid-tile-footer>
+            </md-grid-tile>
+          </md-grid-list>
+
+        </md-content>
+
+      </section>
+
+      <section class="demo-container md-whiteframe-z1">
+
+        <md-toolbar>
+          <div class="md-toolbar-tools">
+            <md-button class="md-icon-button" aria-label="Settings">
+              <md-icon md-font-icon="zmdi zmdi-menu"></md-icon>
+            </md-button>
+            <h2>
+              <span>Responsive Usage</span>
+            </h2>
+            <span flex></span>
+            <md-menu md-position-mode="target-right target">
+              <md-button aria-label="More" class="md-icon-button" ng-click="$mdOpenMenu()">
+                <md-icon md-menu-origin md-font-icon="zmdi zmdi-more-vert"></md-icon>
+              </md-button>
+              <md-menu-content width="4">
+                <md-menu-item ng-repeat="item in [1, 2, 3]">
+                  <md-button>
+                    Option {{item}}
+                  </md-button>
+                </md-menu-item>
+              </md-menu-content>
+            </md-menu>
+          </div>
+        </md-toolbar>
+
+        <md-content class="md-padding" ng-controller="gridListResponsiveDemoCtrl as appCtrl" layout-padding>
+
+          <md-grid-list
+            md-cols-gt-md="12" md-cols-sm="3" md-cols-md="8"
+            md-row-height-gt-md="1:1" md-row-height="4:3"
+            md-gutter-gt-md="16px" md-gutter-gt-sm="8px" md-gutter="4px">
+          <md-grid-tile
+              ng-repeat="tile in appCtrl.colorTiles"
+              ng-style="{
+                'background': tile.color
+              }"
+              md-colspan-gt-sm="{{tile.colspan}}"
+              md-rowspan-gt-sm="{{tile.rowspan}}">
+          </md-grid-tile>
+        </md-grid-list>
+
+        </md-content>
+
+      </section>
+
+    </div>
+
+
+  </div>
+  <!-- /page content -->
+
+
+
+
+</div>

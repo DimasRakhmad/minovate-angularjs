@@ -1,0 +1,117 @@
+<div class="page page-material">
+
+
+
+
+  <!-- page header -->
+  <div class="pageheader">
+
+    <h2>{{page.title}} <span>// {{page.subtitle}}</span></h2>
+
+    <div class="page-bar">
+
+      <ul class="page-breadcrumb">
+        <li>
+          <a ui-sref="app.dashboard"><i class="fa fa-home"></i> {{main.title}}</a>
+        </li>
+        <li>
+          <a href="javascript:;">Material UI</a>
+        </li>
+        <li>
+          <a ui-sref="app.material.tooltip">{{page.title}}</a>
+        </li>
+      </ul>
+
+    </div>
+
+  </div>
+  <!-- /page header -->
+
+
+
+
+
+
+  <!-- page content -->
+  <div class="pagecontent">
+
+    <div flex layout="column">
+
+      <section class="demo-container md-whiteframe-z1">
+
+        <md-toolbar>
+          <div class="md-toolbar-tools">
+            <md-button class="md-icon-button" aria-label="Settings">
+              <md-icon md-font-icon="zmdi zmdi-menu"></md-icon>
+            </md-button>
+            <h2>
+              <span>Basic Usage</span>
+            </h2>
+            <span flex></span>
+            <md-menu md-position-mode="target-right target">
+              <md-button aria-label="More" class="md-icon-button" ng-click="$mdOpenMenu()">
+                <md-icon md-menu-origin md-font-icon="zmdi zmdi-more-vert"></md-icon>
+              </md-button>
+              <md-menu-content width="4">
+                <md-menu-item ng-repeat="item in [1, 2, 3]">
+                  <md-button>
+                    Option {{item}}
+                  </md-button>
+                </md-menu-item>
+              </md-menu-content>
+            </md-menu>
+          </div>
+        </md-toolbar>
+
+        <md-content class="tooltipdemoBasicUsage">
+
+          <md-toolbar class="md-accent">
+            <h2 class="md-toolbar-tools">
+              <span flex>Awesome Md App</span>
+              <md-button class="md-fab md-accent" aria-label="refresh">
+                <md-tooltip>
+                  Refresh
+                </md-tooltip>
+                <md-icon md-font-icon="zmdi zmdi-refresh" style="width: 24px; height: 24px;">
+                </md-icon>
+              </md-button>
+            </h2>
+          </md-toolbar>
+          <md-content layout-padding>
+            <p>
+              The tooltip is visible when the button is hovered, focused, or touched.
+            </p>
+            <md-button class="md-fab md-fab-top-left left" aria-label="Insert Drive">
+              <md-icon md-font-icon="zmdi zmdi-file text-white" style="width: 24px; height: 24px;"></md-icon>
+              <md-tooltip md-visible="demo.showTooltip">
+                Insert Drive
+              </md-tooltip>
+            </md-button>
+            <md-button class="md-fab md-fab-top-right right" aria-label="Photos">
+              <md-icon md-font-icon="zmdi zmdi-image text-white" style="width: 24px; height: 24px;"></md-icon>
+              <md-tooltip>
+                Photos
+              </md-tooltip>
+            </md-button>
+            <div style="margin-top: 150px;">
+              <p>Additionally, the Tooltip's `md-visible` attribute can use data-binding to programmatically show/hide itself. Toggle the checkbox below...</p>
+            </div>
+            <md-checkbox ng-model="demo.showTooltip">
+              Insert Drive
+            </md-checkbox>
+          </md-content>
+
+        </md-content>
+
+      </section>
+
+    </div>
+
+
+  </div>
+  <!-- /page content -->
+
+
+
+
+</div>

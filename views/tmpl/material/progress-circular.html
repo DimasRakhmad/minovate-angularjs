@@ -1,0 +1,100 @@
+<div class="page page-material">
+
+
+
+
+  <!-- page header -->
+  <div class="pageheader">
+
+    <h2>{{page.title}} <span>// {{page.subtitle}}</span></h2>
+
+    <div class="page-bar">
+
+      <ul class="page-breadcrumb">
+        <li>
+          <a ui-sref="app.dashboard"><i class="fa fa-home"></i> {{main.title}}</a>
+        </li>
+        <li>
+          <a href="javascript:;">Material UI</a>
+        </li>
+        <li>
+          <a ui-sref="app.material.progress-circular">{{page.title}}</a>
+        </li>
+      </ul>
+
+    </div>
+
+  </div>
+  <!-- /page header -->
+
+
+
+
+
+
+  <!-- page content -->
+  <div class="pagecontent">
+
+    <div flex layout="column">
+
+      <section class="demo-container md-whiteframe-z1">
+
+        <md-toolbar>
+          <div class="md-toolbar-tools">
+            <md-button class="md-icon-button" aria-label="Settings">
+              <md-icon md-font-icon="zmdi zmdi-menu"></md-icon>
+            </md-button>
+            <h2>
+              <span>Basic Usage</span>
+            </h2>
+            <span flex></span>
+            <md-menu md-position-mode="target-right target">
+              <md-button aria-label="More" class="md-icon-button" ng-click="$mdOpenMenu()">
+                <md-icon md-menu-origin md-font-icon="zmdi zmdi-more-vert"></md-icon>
+              </md-button>
+              <md-menu-content width="4">
+                <md-menu-item ng-repeat="item in [1, 2, 3]">
+                  <md-button>
+                    Option {{item}}
+                  </md-button>
+                </md-menu-item>
+              </md-menu-content>
+            </md-menu>
+          </div>
+        </md-toolbar>
+
+        <md-content class="md-padding">
+
+          <h4 style="margin-top:10px">Determinate</h4>
+          <p>For operations where the percentage of the operation completed can be determined, use a determinate indicator. They give users a quick sense of how long an operation will take.</p>
+          <div layout="row" layout-sm="column" layout-align="space-around">
+            <md-progress-circular md-mode="determinate" value="{{determinateValue}}"></md-progress-circular>
+          </div>
+          <h4>Indeterminate</h4>
+          <p>For operations where the user is asked to wait a moment while something finishes up, and it's not necessary to expose what's happening behind the scenes and how long it will take, use an indeterminate indicator.</p>
+          <div layout="row" layout-sm="column" layout-align="space-around">
+            <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+          </div>
+          <h4>Theming</h4>
+          <div layout="row" layout-sm="column" layout-align="space-around">
+            <md-progress-circular class="md-hue-2" md-mode="indeterminate"></md-progress-circular>
+            <md-progress-circular class="md-accent" md-mode="indeterminate"></md-progress-circular>
+            <md-progress-circular class="md-accent md-hue-1" md-mode="indeterminate"></md-progress-circular>
+            <md-progress-circular class="md-warn md-hue-3" md-mode="indeterminate"></md-progress-circular>
+            <md-progress-circular class="md-warn" md-mode="indeterminate"></md-progress-circular>
+          </div>
+
+        </md-content>
+
+      </section>
+
+    </div>
+
+
+  </div>
+  <!-- /page content -->
+
+
+
+
+</div>

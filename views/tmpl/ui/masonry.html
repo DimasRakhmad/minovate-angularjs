@@ -1,0 +1,69 @@
+<div class="page page-masonry">
+
+
+
+
+  <!-- page header -->
+  <div class="pageheader">
+
+    <h2>{{page.title}} <span>// {{page.subtitle}}</span></h2>
+
+    <div class="page-bar">
+
+      <ul class="page-breadcrumb">
+        <li>
+          <a ui-sref="app.dashboard"><i class="fa fa-home"></i> {{main.title}}</a>
+        </li>
+        <li>
+          <a href="javascript:;">UI Kit</a>
+        </li>
+        <li>
+          <a ui-sref="app.ui.masonry">{{page.title}}</a>
+        </li>
+      </ul>
+
+    </div>
+
+  </div>
+  <!-- /page header -->
+
+
+
+
+
+
+  <!-- page content -->
+  <div class="pagecontent">
+
+    <div class="row" masonry>
+      <div class="masonry-brick col-sm-6 col-md-4 col-lg-3" ng-repeat="brick in bricks">
+
+        <div class="tile tile-simple tile-shadow">
+          <div class="tile-header cover">
+            <img ng-src="{{ brick.src }}" alt="A masonry brick" class="img-responsive">
+          </div>
+          <div class="tile-body">
+            <h3 class="brick-title">{{brick.title}}</h3>
+            <p class="brick-meta">
+              By
+              <a href="javascript:;" ipsum-name="rfl"></a> /
+              <a href="javascript:;">October 10, 2015</a> /
+              <a href="javascript:;"><span>6</span> Comments</a>
+            </p>
+            <p class="brick-content">{{brick.content}}</p>
+            <button type="button" class="btn btn-info btn-border btn-rounded b-1x read-more">Read More</button>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+
+  </div>
+  <!-- /page content -->
+
+
+
+
+</div>

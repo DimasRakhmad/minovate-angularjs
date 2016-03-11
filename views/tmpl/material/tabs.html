@@ -1,0 +1,244 @@
+<div class="page page-material">
+
+
+
+
+  <!-- page header -->
+  <div class="pageheader">
+
+    <h2>{{page.title}} <span>// {{page.subtitle}}</span></h2>
+
+    <div class="page-bar">
+
+      <ul class="page-breadcrumb">
+        <li>
+          <a ui-sref="app.dashboard"><i class="fa fa-home"></i> {{main.title}}</a>
+        </li>
+        <li>
+          <a href="javascript:;">Material UI</a>
+        </li>
+        <li>
+          <a ui-sref="app.material.tabs">{{page.title}}</a>
+        </li>
+      </ul>
+
+    </div>
+
+  </div>
+  <!-- /page header -->
+
+
+
+
+
+
+  <!-- page content -->
+  <div class="pagecontent">
+
+    <div flex layout="column">
+
+      <p class="lead" style="max-width: 864px">
+        The Dynamic Height demo shows how tabs can be used to display content with varying heights.
+      </p>
+
+      <section class="demo-container md-whiteframe-z1">
+
+        <md-toolbar>
+          <div class="md-toolbar-tools">
+            <md-button class="md-icon-button" aria-label="Settings">
+              <md-icon md-font-icon="zmdi zmdi-menu"></md-icon>
+            </md-button>
+            <h2>
+              <span>Basic Usage</span>
+            </h2>
+            <span flex></span>
+            <md-menu md-position-mode="target-right target">
+              <md-button aria-label="More" class="md-icon-button" ng-click="$mdOpenMenu()">
+                <md-icon md-menu-origin md-font-icon="zmdi zmdi-more-vert"></md-icon>
+              </md-button>
+              <md-menu-content width="4">
+                <md-menu-item ng-repeat="item in [1, 2, 3]">
+                  <md-button>
+                    Option {{item}}
+                  </md-button>
+                </md-menu-item>
+              </md-menu-content>
+            </md-menu>
+          </div>
+        </md-toolbar>
+
+        <md-content class="md-padding tabsdemoDynamicHeight">
+
+          <md-tabs md-dynamic-height md-border-bottom>
+            <md-tab label="one">
+              <md-content class="md-padding">
+                <h1 class="md-display-2">Tab One</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue. Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus. In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur felis nec, feugiat ultricies mi.</p>
+              </md-content>
+            </md-tab>
+            <md-tab label="two">
+              <md-content class="md-padding">
+                <h1 class="md-display-2">Tab Two</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue. Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus. In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur felis nec, feugiat ultricies mi. Aliquam erat volutpat. Nam placerat, tortor in ultrices porttitor, orci enim rutrum enim, vel tempor sapien arcu a tellus. Vivamus convallis sodales ante varius gravida. Curabitur a purus vel augue ultrices ultricies id a nisl. Nullam malesuada consequat diam, a facilisis tortor volutpat et. Sed urna dolor, aliquet vitae posuere vulputate, euismod ac lorem. Sed felis risus, pulvinar at interdum quis, vehicula sed odio. Phasellus in enim venenatis, iaculis tortor eu, bibendum ante. Donec ac tellus dictum neque volutpat blandit. Praesent efficitur faucibus risus, ac auctor purus porttitor vitae. Phasellus ornare dui nec orci posuere, nec luctus mauris semper.</p>
+                <p>Morbi viverra, ante vel aliquet tincidunt, leo dolor pharetra quam, at semper massa orci nec magna. Donec posuere nec sapien sed laoreet. Etiam cursus nunc in condimentum facilisis. Etiam in tempor tortor. Vivamus faucibus egestas enim, at convallis diam pulvinar vel. Cras ac orci eget nisi maximus cursus. Nunc urna libero, viverra sit amet nisl at, hendrerit tempor turpis. Maecenas facilisis convallis mi vel tempor. Nullam vitae nunc leo. Cras sed nisl consectetur, rhoncus sapien sit amet, tempus sapien.</p>
+                <p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur posuere molestie dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit erat, at posuere mi. Cras eu fermentum nunc. Sed id ante eu orci commodo volutpat non ac est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo lectus.</p>
+              </md-content>
+            </md-tab>
+            <md-tab label="three">
+              <md-content class="md-padding">
+                <h1 class="md-display-2">Tab Three</h1>
+                <p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur posuere molestie dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit erat, at posuere mi. Cras eu fermentum nunc. Sed id ante eu orci commodo volutpat non ac est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo lectus.</p>
+              </md-content>
+            </md-tab>
+          </md-tabs>
+
+        </md-content>
+
+      </section>
+
+      <p class="lead" style="max-width: 864px">
+        The Dynamic Tabs demo shows how internal tab views can be easily used.
+      </p>
+
+      <section class="demo-container md-whiteframe-z1">
+
+        <md-toolbar>
+          <div class="md-toolbar-tools">
+            <md-button class="md-icon-button" aria-label="Settings">
+              <md-icon md-font-icon="zmdi zmdi-menu"></md-icon>
+            </md-button>
+            <h2>
+              <span>Dynamic Tabs</span>
+            </h2>
+            <span flex></span>
+            <md-menu md-position-mode="target-right target">
+              <md-button aria-label="More" class="md-icon-button" ng-click="$mdOpenMenu()">
+                <md-icon md-menu-origin md-font-icon="zmdi zmdi-more-vert"></md-icon>
+              </md-button>
+              <md-menu-content width="4">
+                <md-menu-item ng-repeat="item in [1, 2, 3]">
+                  <md-button>
+                    Option {{item}}
+                  </md-button>
+                </md-menu-item>
+              </md-menu-content>
+            </md-menu>
+          </div>
+        </md-toolbar>
+
+        <div layout="column">
+          <md-content class="md-padding tabsdemoDynamicTabs">
+            <md-tabs md-selected="selectedIndex" md-border-bottom md-autoselect>
+              <md-tab ng-repeat="tab in tabs"
+                      ng-disabled="tab.disabled"
+                      label="{{tab.title}}">
+                <div class="demo-tab tab{{$index%4}}" style="padding: 25px; text-align: center;">
+                  <div ng-bind="tab.content"></div>
+                  <br/>
+                  <md-button class="md-primary md-raised" ng-click="removeTab( tab )" ng-disabled="tabs.length <= 1">Remove Tab</md-button>
+                </div>
+              </md-tab>
+            </md-tabs>
+
+            <form ng-submit="addTab(tTitle,tContent)" layout="column" class="md-padding tabsdemoDynamicTabs" style="padding-top: 0;">
+              <div layout="row" layout-sm="column">
+                <div flex style="position: relative;">
+                  <h2 class="md-subhead" style="position: absolute; bottom: 0; left: 0; margin: 0; font-weight: 500; text-transform: uppercase; line-height: 35px; white-space: nowrap;">Add a new Tab:</h2>
+                </div>
+                <md-input-container>
+                  <label for="label">Label</label>
+                  <input type="text" id="label" ng-model="tTitle">
+                </md-input-container>
+                <md-input-container>
+                  <label for="tcontent">Content</label>
+                  <input type="text" id="tcontent" ng-model="tContent">
+                </md-input-container>
+                <md-button class="add-tab md-primary md-raised" ng-disabled="!tTitle || !tContent" type="submit" style="margin-right: 0;">Add Tab</md-button>
+              </div>
+            </form>
+          </md-content>
+        </div>
+
+
+      </section>
+
+      <p class="lead" style="max-width: 864px">
+        The Static Tabs demo shows how external content can be used with tabs.
+      </p>
+
+      <section class="demo-container md-whiteframe-z1">
+
+        <md-toolbar>
+          <div class="md-toolbar-tools">
+            <md-button class="md-icon-button" aria-label="Settings">
+              <md-icon md-font-icon="zmdi zmdi-menu"></md-icon>
+            </md-button>
+            <h2>
+              <span>Static Tabs</span>
+            </h2>
+            <span flex></span>
+            <md-menu md-position-mode="target-right target">
+              <md-button aria-label="More" class="md-icon-button" ng-click="$mdOpenMenu()">
+                <md-icon md-menu-origin md-font-icon="zmdi zmdi-more-vert"></md-icon>
+              </md-button>
+              <md-menu-content width="4">
+                <md-menu-item ng-repeat="item in [1, 2, 3]">
+                  <md-button>
+                    Option {{item}}
+                  </md-button>
+                </md-menu-item>
+              </md-menu-content>
+            </md-menu>
+          </div>
+        </md-toolbar>
+
+        <div layout="column">
+          <md-content class="md-padding tabsdemoStaticTabs">
+            <md-tabs class="md-accent" md-selected="data.selectedIndex" md-align-tabs="{{data.bottom ? 'bottom' : 'top'}}">
+              <md-tab id="tab1">
+                <md-tab-label>Item One</md-tab-label>
+                <md-tab-body>
+                  View for Item #1 <br/>
+                  data.selectedIndex = 0;
+                </md-tab-body>
+              </md-tab>
+              <md-tab id="tab2" ng-disabled="data.secondLocked">
+                <md-tab-label>{{data.secondLabel}}</md-tab-label>
+                <md-tab-body>
+                  View for Item #2 <br/>
+                  data.selectedIndex = 1;
+                </md-tab-body>
+              </md-tab>
+              <md-tab id="tab3">
+                <md-tab-label>Item Three</md-tab-label>
+                <md-tab-body>
+                  View for Item #3 <br/>
+                  data.selectedIndex = 2;
+                </md-tab-body>
+              </md-tab>
+            </md-tabs>
+            <div class="mt-20" layout="row" layout-sm="column" layout-align="left center"
+                 style="padding-top: 0;">
+              <md-checkbox ng-model="data.secondLocked" aria-label="Disable item two?" style="margin: 5px;">
+                Disable item two?
+              </md-checkbox>
+              <md-checkbox ng-model="data.bottom" aria-label="Align tabs to bottom?" style="margin: 5px;">
+                Align tabs to bottom?
+              </md-checkbox>
+            </div>
+          </md-content>
+        </div>
+
+
+      </section>
+
+    </div>
+
+
+  </div>
+  <!-- /page content -->
+
+
+
+
+</div>

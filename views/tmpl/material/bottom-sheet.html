@@ -1,0 +1,129 @@
+<div class="page page-material">
+
+
+
+
+  <!-- page header -->
+  <div class="pageheader">
+
+    <h2>{{page.title}} <span>// {{page.subtitle}}</span></h2>
+
+    <div class="page-bar">
+
+      <ul class="page-breadcrumb">
+        <li>
+          <a ui-sref="app.dashboard"><i class="fa fa-home"></i> {{main.title}}</a>
+        </li>
+        <li>
+          <a href="javascript:;">Material UI</a>
+        </li>
+        <li>
+          <a ui-sref="app.material.bottom-sheet">{{page.title}}</a>
+        </li>
+      </ul>
+
+    </div>
+
+  </div>
+  <!-- /page header -->
+
+
+
+
+
+
+  <!-- page content -->
+  <div class="pagecontent">
+
+    <div flex layout="column">
+
+      <section class="demo-container md-whiteframe-z1">
+
+        <md-toolbar>
+          <div class="md-toolbar-tools">
+            <md-button class="md-icon-button" aria-label="Settings">
+              <md-icon md-font-icon="zmdi zmdi-menu"></md-icon>
+            </md-button>
+            <h2>
+              <span>Basic Usage</span>
+            </h2>
+            <span flex></span>
+            <md-menu md-position-mode="target-right target">
+              <md-button aria-label="More" class="md-icon-button" ng-click="$mdOpenMenu()">
+                <md-icon md-menu-origin md-font-icon="zmdi zmdi-more-vert"></md-icon>
+              </md-button>
+              <md-menu-content width="4">
+                <md-menu-item ng-repeat="item in [1, 2, 3]">
+                  <md-button>
+                    Option {{item}}
+                  </md-button>
+                </md-menu-item>
+              </md-menu-content>
+            </md-menu>
+          </div>
+        </md-toolbar>
+
+        <md-content class="md-padding" id="bottomSheetContainer">
+
+          <h2 class="md-title text-hotpink">Usage</h2>
+
+          <p class="docs">Bottom sheets can be displayed by clicking one of the buttons below.  Once shown, it can be
+            dismissed by either swiping down or clicking in the shaded area.</p>
+
+          <h2 class="md-title text-hotpink">Actions</h2>
+
+          <p class="docs">Use one of the following buttons to display a bottom sheet.</p>
+
+          <div class="bottom-sheet-demo inset" layout="row" layout-sm="column" layout-align="center">
+            <md-button flex="50" class="md-primary md-raised" ng-click="showListBottomSheet($event)">Show as List</md-button>
+            <md-button flex="50" class="md-primary md-raised" ng-click="showGridBottomSheet($event)">Show as Grid</md-button>
+          </div>
+
+          <div ng-if="alert">
+            <br/>
+            <b layout="row" layout-align="center center" class="md-padding">
+              {{alert}}
+            </b>
+          </div>
+
+          <script type="text/ng-template" id="bottom-sheet-list-template.html">
+            <md-bottom-sheet class="md-list md-has-header bottomSheet">
+              <md-subheader>Comment Actions</md-subheader>
+              <md-list>
+                <md-list-item ng-repeat="item in items">
+                  <md-button class="md-list-item-content" ng-click="listItemClick($index)">
+                    <md-icon md-font-icon="{{item.icon}}"></md-icon>
+                    <span class="md-inline-list-icon-label">{{ item.name }}</span>
+                  </md-button>
+                </md-list-item>
+              </md-list>
+            </md-bottom-sheet>
+          </script>
+
+          <script type="text/ng-template" id="bottom-sheet-grid-template.html">
+            <md-bottom-sheet class="md-grid bottomSheet">
+              <md-list>
+                <md-list-item ng-repeat="item in items">
+                  <md-button class="md-grid-item-content" ng-click="listItemClick($index)">
+                    <md-icon md-font-icon="{{item.icon}}"></md-icon>
+                    <div class="md-grid-text"> {{ item.name }} </div>
+                  </md-button>
+                </md-list-item>
+              </md-list>
+            </md-bottom-sheet>
+          </script>
+
+        </md-content>
+
+      </section>
+
+    </div>
+
+
+  </div>
+  <!-- /page content -->
+
+
+
+
+</div>
